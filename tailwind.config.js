@@ -1,9 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [  "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -11,5 +12,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+  include: ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  exclude: ["node_modules"],
+};
 

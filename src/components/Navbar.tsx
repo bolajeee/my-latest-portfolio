@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <div className="text-white/70 pt-6">
       <div className="hidden md:flex items-center px-4 py-2 mx-auto max-w-[400px]">
-        <ul className="flex flex-row p-4 space-x-8">
+        <ul className="flex flex-row p-2 space-x-8 mx-auto">
           {navLinks.map((link, index) => (
             <li key={index}>
               <Link href={link.path}>
