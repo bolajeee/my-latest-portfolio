@@ -9,7 +9,7 @@ import finance from "../assets/finance.png"
 
 const A = () => {
   return (
-    <div className="max-w-[1200px] mx-auto " id="about">
+    <div className="max-w-[1100px] mx-auto " id="about">
       <h1 className="text-white text-6xl max-w-[360px] mx-auto font-semibold p-4 mb-4 text-center ">
         About
         <span className="text-orange-400 px-4">Me</span>
