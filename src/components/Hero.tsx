@@ -37,22 +37,29 @@ const Hero = () => {
           </h1>
         </div>
 
-        <motion.div className="absolute left-[280px] top-[170px]" drag>
+        {/* Smaller icons positioned at the edge in mobile */}
+        <motion.div
+          className="absolute left-0 top-[170px] lg:left-[280px] lg:top-[170px]"
+          drag
+        >
           <Image
             src={cursor}
-            height="80"
-            width="100"
+            height="60"
+            width="80"
             alt="cursor"
             className=""
             draggable="false"
           />
         </motion.div>
 
-        <motion.div className="absolute right-[260px] top-[70px]" drag>
+        <motion.div
+          className="absolute right-0 top-[70px] lg:right-[260px] lg:top-[70px]"
+          drag
+        >
           <Image
             src={lightning}
-            height="100"
-            width="100"
+            height="80"
+            width="80"
             alt="lightning"
             className=""
             draggable="false"

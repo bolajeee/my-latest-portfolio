@@ -1,43 +1,43 @@
-"use client"
-import Image from "next/image"
-import {motion } from 'framer-motion'
-// import project from "../assets/project.jpg"
-import proj1 from "../assets/proj1.jpg"
-import proj2 from "../assets/proj2.jpg"
-import proj3 from "../assets/proj3.png"
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import proj1 from "../assets/proj1.jpg";
+import proj2 from "../assets/proj2.jpg";
+import proj3 from "../assets/proj3.png";
 import proj4 from "../assets/proj4.jpg";
 
 const projects = [
   {
-    title: " E-commerce",
+    title: "E-commerce",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "MongoDb, Express, React",
     git: "#",
-    Link: "#",
+    link: "#",
     src: proj1,
   },
   {
-    title: " E-commerce",
+    title: "Portfolio Website",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-    devstack: "MongoDb, Express, React",
+    devstack: "Next.js, Tailwind CSS",
     git: "#",
-    Link: "#",
+    link: "#",
     src: proj2,
   },
   {
-    title: " E-commerce",
+    title: "Blog Platform",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-    devstack: "MongoDb, Express, React",
+    devstack: "Node.js, React, MongoDB",
     git: "#",
-    Link: "#",
+    link: "#",
     src: proj3,
   },
   {
-    title: " E-commerce",
+    title: "Task Manager App",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-    devstack: "MongoDb, Express, React",
+    devstack: "React, Firebase",
     git: "#",
-    Link: "#",
+    link: "#",
     src: proj4,
   },
 ];
@@ -45,15 +45,19 @@ const projects = [
 const Portfolio = () => {
   return (
     <div
-      className="text-white bg-gradient-to-b from-black to-[#381a5f] py-18 mt-52"
-      id="porfolio"
+      className="text-white bg-gradient-to-b from-black to-[#381a5f] py-32"
+      id="portfolio"
     >
-      <h1 className="text-white text-6xl max-w-[360px] mx-auto font-semibold p-4 mb-4 text-center my-12">
+      {/* Header */}
+      <h1 className="text-4xl md:text-6xl font-bold text-center mb-32">
         My
-        <span className="text-orange-400 px-4">Projects</span>
+        <span className="text-orange-400 px-4 underline decoration-orange-400 decoration-4">
+          Projects
+        </span>
       </h1>
 
-      <div className="max-w-[1100px] mx-auto mt-40 space-y-24">
+      {/* Project Cards */}
+      <div className="max-w-[1200px] mx-auto space-y-16 px-4">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -61,42 +65,60 @@ const Portfolio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className={` mt-12 flex ${
-              index % 2 === 1
-                ? "flex-col-reverse md:flex-row-reverse gap-16"
-                : "flex-col md:flex-row"
-            }`}
+            className={`flex flex-col ${
+              index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
+            } items-center gap-8 md:gap-16`}
           >
-            <div className="space-y-2 max-w-[550px]">
-              <h2 className="text-7xl my-4 text-white/70">{`0${index + 1}`}</h2>
-              <h2 className="text-4xl">{project.title}</h2>
-              <p className="text-lg text-white/70 break-words p-4">
+            {/* Text Content */}
+            <div className="space-y-4 max-w-lg text-center md:text-left">
+              <h2 className="text-6xl font-bold text-white/70">{`0${
+                index + 1
+              }`}</h2>
+              <h3 className="text-3xl font-semibold">{project.title}</h3>
+              <p className="text-base md:text-lg text-white/70">
                 {project.desc}
               </p>
-              <p className="text-xl text-orange-400 font-semibold">
+              <p className="text-lg font-semibold text-orange-400">
                 {project.devstack}
               </p>
 
-              <div className="w-64 h-[1px] bg-gray-400 my-4">
-                <a href="project.link" className="mr-6">
-                  Link
+              {/* Links */}
+              <div className="flex justify-center md:justify-start gap-6 mt-4">
+                <a
+                  href={project.link}
+                  className="px-4 py-2 bg-orange-400 text-black rounded-md hover:bg-orange-500 transition"
+                >
+                  Live Demo
                 </a>
-                <a href="project.git">Git</a>
+                <a
+                  href={project.git}
+                  className="px-4 py-2 border border-orange-400 text-orange-400 rounded-md hover:bg-orange-400 hover:text-black transition"
+                >
+                  GitHub
+                </a>
               </div>
             </div>
-            <div className="flex justify-center items-center">
+
+            {/* Image */}
+            <motion.div
+              whileHover={{
+                scale: 1.1,
+                rotate: index % 2 === 1 ? 1 : -1,
+              }}
+              transition={{ duration: 0.2 }}
+              className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition"
+            >
               <Image
                 src={project.src}
                 alt={project.title}
-                        className="h-[400px] w-[500px] object-cover border
-                rounded border-gray-700"
+                className="h-[300px] md:h-[350px] lg:h-[400px] w-full object-cover"
               />
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
     </div>
   );
-}
+};
 
-export default Portfolio
+export default Portfolio;
