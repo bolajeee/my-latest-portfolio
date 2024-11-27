@@ -26,7 +26,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="py-20 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#201942_35%,#8f5c55_60%,#DBAF6E_80%)]">
+    <div className="px-6 md:px-0 py-20 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#201942_35%,#8f5c55_60%,#DBAF6E_80%)]">
       <div className="absolute rounded-[50%] w-[3000px] h-[1300px] top-[550px] left-[50%] -translate-x-1/2 bg-[radial-gradient(closest-side,#000_80%,#2B1942)]"></div>
 
       <div className="relative">
@@ -39,15 +39,14 @@ const Hero = () => {
 
         {/* Smaller icons positioned at the edge in mobile */}
         <motion.div
-          className="absolute left-0 top-[170px] lg:left-[280px] lg:top-[170px]"
+          className=" absolute left-0 top-[270px] lg:left-[280px] lg:top-[170px]"
           drag
         >
           <Image
             src={cursor}
             height="60"
-            width="80"
             alt="cursor"
-            className=""
+            className="w-[30px] md:w-[80px]"
             draggable="false"
           />
         </motion.div>
@@ -61,7 +60,7 @@ const Hero = () => {
             height="80"
             width="80"
             alt="lightning"
-            className=""
+            className="w-[30px] md:w-[80px]"
             draggable="false"
           />
         </motion.div>

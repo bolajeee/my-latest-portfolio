@@ -13,25 +13,25 @@ const About = () => {
       title: "Educational Background",
       desc: "xxxxxx",
       src: book,
-      span: "col-span-5",
+      span: "md:col-span-5",
     },
     {
       title: "Virtual Assistance",
       desc: "xxxxxx",
       src: pc,
-      span: "col-span-3",
+      span: "md:col-span-3",
     },
     {
       title: "Web Development",
       desc: "xxxxxx",
       src: card,
-      span: "col-span-3",
+      span: "md:col-span-3",
     },
     {
       title: "Graphics Design",
       desc: "xxxxxx",
       src: finance,
-      span: "col-span-5",
+      span: "md:col-span-5",
     },
   ];
 
@@ -42,7 +42,7 @@ const About = () => {
         <span className="text-orange-400 px-4">Me</span>
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-8 gap-6 place-items-center">
+      <div className="px-6 md:p-0 grid grid-cols-1 md:grid-cols-8 gap-6 place-items-center">
         {cards.map((card, index) => (
           <motion.div
             key={index}

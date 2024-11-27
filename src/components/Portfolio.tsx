@@ -57,7 +57,7 @@ const Portfolio = () => {
       </h1>
 
       {/* Project Cards */}
-      <div className="max-w-[1200px] mx-auto space-y-16 px-4">
+      <div className="px-6 md:px-0 max-w-[1200px] mx-auto space-y-16">
         {projects.map((project, index) => (
           <motion.div
             key={index}
