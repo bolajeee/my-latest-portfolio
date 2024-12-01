@@ -2,21 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root{
+:root {
   background-color: black;
 }
 
+body {
+  background: var(--background-gradient);
+}
+
+
 @keyframes gradient-xy {
-  0%, 100% {
-    background-position:0% 50%;
+  0%,
+  100% {
+    background-position: 0% 50%;
   }
-  50%{
+  50% {
     background-position: 100% 50%;
   }
 }
 
-.animate-gradient-xy{
+.animate-gradient-xy {
   animation: gradient-xy 10s ease-in infinite;
   background-size: 200% 200%;
 }

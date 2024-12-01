@@ -9,35 +9,35 @@ import proj4 from "../assets/proj4.jpg";
 
 const projects = [
   {
-    title: "E-commerce",
+    title: "Movie Comparison Site",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "MongoDb, Express, React",
-    git: "#",
-    link: "#",
+    git: "https://github.com/bolajeee/movie-compare-site",
+    // link: "https://bolajeee.github.io/movie-compare-site/",
     src: proj1,
   },
   {
     title: "Portfolio Website",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "Next.js, Tailwind CSS",
-    git: "#",
-    link: "#",
+    git: "https://github.com/bolajeee/Brainwave-AI-",
+    // link: "https://bolajeee.github.io/Brainwave-AI-/",
     src: proj2,
   },
   {
     title: "Blog Platform",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "Node.js, React, MongoDB",
-    git: "#",
-    link: "#",
+    git: "https://github.com/bolajeee/AI-summarizer",
+    // link: "https://bolajeee.github.io/AI-summarizer/",
     src: proj3,
   },
   {
     title: "Task Manager App",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "React, Firebase",
-    git: "#",
-    link: "#",
+    git: "https://github.com/bolajeee/coc-stat-landing-page",
+    // link: "#",
     src: proj4,
   },
 ];
@@ -84,12 +84,12 @@ const Portfolio = () => {
 
               {/* Links */}
               <div className="flex justify-center md:justify-start gap-6 mt-4">
-                <a
+                {/* <a
                   href={project.link}
                   className="px-4 py-2 bg-orange-400 text-black rounded-md hover:bg-orange-500 transition"
                 >
                   Live Demo
-                </a>
+                </a> */}
                 <a
                   href={project.git}
                   className="px-4 py-2 border border-orange-400 text-orange-400 rounded-md hover:bg-orange-400 hover:text-black transition"

@@ -33,7 +33,7 @@ const skillIcons = [
 
 const Skills = () => {
   return (
-    <div className="bg-gradient-to-t from-black to-[#381a5f] w-full mx-auto py-16 text-center">
+    <div className="bg-gradient-to-t from-black to-[#381a5f] w-full mx-auto py-32 text-center">
       <div className="text-white max-w-[1100px] mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-16">
           My Skill Set

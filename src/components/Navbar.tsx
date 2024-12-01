@@ -1,26 +1,24 @@
-"use client"
-import Link from "next/link"
-import React, {useState} from "react"
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const navLinks = [
-    {title: "About", path: "#about"},
-    {title: "Portfolio", path: "#portfolio"},
-]
-
+  { title: "About", path: "#about" },
+  { title: "Portfolio", path: "#portfolio" },
+];
 
 const Navbar = () => {
+  const [nav, setNav] = useState(false);
 
-    const [nav, setNav] = useState(false)
+  const toggleNav = () => {
+    setNav(!nav);
+  };
 
-    const toggleNav = () => {
-        setNav(!nav)
-    }
-
-    const closeNav = () => {
-        setNav(false)
-    }
+  const closeNav = () => {
+    setNav(false);
+  };
 
   const menuVariants = {
     open: {
@@ -31,7 +29,7 @@ const Navbar = () => {
       },
     },
     closed: {
-      x: '-100%',
+      x: "-100%",
       transition: {
         stiffness: 20,
         damping: 15,
@@ -40,25 +38,27 @@ const Navbar = () => {
   };
 
   return (
-    <div className="text-white/70 pt-6">
+    <div className="text-gray-200 pt-6">
       <div className="hidden md:flex items-center px-4 py-2 mx-auto max-w-[400px]">
         <ul className="flex flex-row p-2 space-x-8 mx-auto">
           {navLinks.map((link, index) => (
             <li key={index}>
               <Link href={link.path}>
-                <p>{link.title}</p>
+                <p className="hover:text-white transition duration-300">
+                  {link.title}
+                </p>
               </Link>
             </li>
           ))}
 
           <li>
             <a href="#contact" className="group">
-              <h1 className="text-lg font-bold text-white/70 cursor-pointer ">
+              <h1 className="text-lg font-bold text-gray-200 cursor-pointer">
                 Contact Me
               </h1>
               <div className="relative">
-                <div className="absolute w-2/3 h-1 transition-all duration-300 ease-out bg-orange-600 rounded-full group-hover:w-full"></div>
-                <div className="mt-2 absolute w-1/3 h-1 transition-all duration-300 ease-out bg-orange-800 rounded-full group-hover:w-full"></div>
+                <div className="absolute w-2/3 h-1 transition-all duration-300 ease-out bg-orange-400 rounded-full group-hover:w-full"></div>
+                <div className="mt-2 absolute w-1/3 h-1 transition-all duration-300 ease-out bg-gray-400 rounded-full group-hover:w-full"></div>
               </div>
             </a>
           </li>
@@ -66,21 +66,25 @@ const Navbar = () => {
       </div>
       <div
         onClick={toggleNav}
-        className="md:hidden absolute tpo-5 right-5 border rounded border-white/70 p-2 z-50 text-white/70"
+        className="md:hidden absolute top-5 right-5 border rounded border-gray-200 p-2 z-50 text-gray-200"
       >
         {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
       </div>
 
       <motion.div
         initial={false}
-        animate={nav ? 'open' : 'closed'}
+        animate={nav ? "open" : "closed"}
         variants={menuVariants}
-        className="fixed left-0 top-0 w-full z-40 bg-black/90 "
+        className="fixed left-0 top-0 w-full z-40"
       >
-        <ul className="text-4xl font-semibold my-24 text-center space-y-8">
+        <ul className="text-4xl font-semibold my-24 text-center space-y-8 text-gray-200">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link href={link.path} onClick={closeNav}>
+              <Link
+                href={link.path}
+                onClick={closeNav}
+                className="hover:text-white transition duration-300"
+              >
                 {link.title}
               </Link>
             </li>
@@ -89,6 +93,6 @@ const Navbar = () => {
       </motion.div>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

@@ -26,27 +26,27 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="px-6 md:px-0 py-20 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#201942_35%,#8f5c55_60%,#DBAF6E_80%)]">
-      <div className="absolute rounded-[50%] w-[3000px] h-[1300px] top-[550px] left-[50%] -translate-x-1/2 bg-[radial-gradient(closest-side,#000_80%,#2B1942)]"></div>
+    <div className="px-6 md:px-0 py-20 relative overflow-clip bg-gradient-to-b from-black to-gray-800">
+      <div className="absolute rounded-full w-[3000px] h-[1300px] top-[550px] left-[50%] -translate-x-1/2 bg-[radial-gradient(closest-side,#gray-800_80%,#1a1a1a)]"></div>
 
       <div className="relative">
         <div className="text-6xl font-bold text-center">
-          <h1 className="text-[#98B4CE]">Hi, I am</h1>
-          <h1 className="text-orange-700">
+          <h1 className="text-gray-300">Hi, I am</h1>
+          <h1 className="text-orange-400">
             <span ref={typedElement}></span>
           </h1>
         </div>
 
         {/* Smaller icons positioned at the edge in mobile */}
         <motion.div
-          className=" absolute left-0 top-[270px] lg:left-[280px] lg:top-[170px]"
+          className="absolute left-0 top-[270px] lg:left-[280px] lg:top-[170px]"
           drag
         >
           <Image
             src={cursor}
             height="60"
             alt="cursor"
-            className="w-[30px] md:w-[80px]"
+            className="w-[30px] md:w-[80px] grayscale hover:grayscale-0 transition duration-300"
             draggable="false"
           />
         </motion.div>
@@ -60,12 +60,12 @@ const Hero = () => {
             height="80"
             width="80"
             alt="lightning"
-            className="w-[30px] md:w-[80px]"
+            className="w-[30px] md:w-[80px] grayscale hover:grayscale-0 transition duration-300"
             draggable="false"
           />
         </motion.div>
 
-        <p className="text-center text-xl max-w-md mx-auto mt-8 text-white/80">
+        <p className="text-center text-xl max-w-md mx-auto mt-8 text-gray-200">
           An aspiring bioprocess engineer with skills in leadership, front-end
           web development, graphic design, and virtual assistance.
         </p>
@@ -73,7 +73,7 @@ const Hero = () => {
         <Image
           src={profilepic}
           alt="profile picture"
-          className="h-[400px] w-auto mx-auto mt-4"
+          className="h-[400px] w-auto mx-auto mt-4 rounded-full border-4 border-gray-600"
         />
       </div>
     </div>

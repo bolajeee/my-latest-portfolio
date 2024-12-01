@@ -6,7 +6,7 @@ import mail from "../assets/mail.png";
 const Contact = () => {
   return (
     <div
-      className="max-w-[1100px] mx-auto flex flex-col lg:flex-row text-white/70 p-8 rounded-lg space-y-12 lg:space-y-0 lg:space-x-12"
+      className="max-w-[1100px] mx-auto flex flex-col lg:flex-row text-white/70 p-8 rounded-lg space-y-12 lg:space-y-0 lg:space-x-12 py-32"
       id="contact"
     >
       {/* Contact Information Section */}
