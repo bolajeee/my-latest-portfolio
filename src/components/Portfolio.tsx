@@ -9,6 +9,14 @@ import proj4 from "../assets/proj4.jpg";
 
 const projects = [
   {
+    title: "Commerce Website",
+    desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+    devstack: "React, Firebase",
+    git: "https://github.com/bolajeee/MernFullstackApp ",
+    // link: "#",
+    src: proj4,
+  },
+  {
     title: "Movie Comparison Site",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "MongoDb, Express, React",
@@ -31,14 +39,6 @@ const projects = [
     git: "https://github.com/bolajeee/AI-summarizer",
     // link: "https://bolajeee.github.io/AI-summarizer/",
     src: proj3,
-  },
-  {
-    title: "Task Manager App",
-    desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-    devstack: "React, Firebase",
-    git: "https://github.com/bolajeee/coc-stat-landing-page",
-    // link: "#",
-    src: proj4,
   },
 ];
 
