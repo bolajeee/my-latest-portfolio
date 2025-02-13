@@ -3,7 +3,7 @@ import Image from "next/image";
 import cursor from "../assets/icon1.png";
 import lightning from "../assets/icon2.png";
 import { motion } from "framer-motion";
-import profilepic from "../assets/profilepic.png";
+import profilepic from "../assets/profilepic.jpg";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 
@@ -12,7 +12,7 @@ const Hero = () => {
 
   useEffect(() => {
     const options = {
-      strings: ["Ibrahim"],
+      strings: ["Ibrahim O. IBRAHIM"],
       typeSpeed: 100,
       backSpeed: 50,
       loop: false,
@@ -66,8 +66,7 @@ const Hero = () => {
         </motion.div>
 
         <p className="text-center text-xl max-w-md mx-auto mt-8 text-gray-200">
-          An aspiring bioprocess engineer with skills in leadership, front-end
-          web development, graphic design, and virtual assistance.
+          An aspiring bioprocess engineer with skills in leadership, fullstack Developer, graphic design, and virtual assistance.
         </p>
 
         <Image

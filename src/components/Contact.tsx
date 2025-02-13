@@ -14,12 +14,17 @@ const Contact = () => {
         <ul className="space-y-8">
           <li className="flex items-center space-x-4">
             <Image src={phone} alt="Phone" className="h-[40px] w-auto" />
-            <p className="text-lg md:text-xl font-medium">+234 915 783 5182</p>
+            <p className="text-lg md:text-xl font-medium">
+              <a href="tel:+2349157835182">+234 915 783 5182</a>
+            </p>
           </li>
           <li className="flex items-center space-x-4">
             <Image src={mail} alt="Mail" className="h-[40px] w-auto" />
             <p className="text-md md:text-xl font-sm">
-              Ibrahimomobolaji1999 <br />@gmail.com
+              <a href="mailto:ibrahimomobolaji1999@gmail.com">
+                Ibrahimomobolaji1999 <br />
+                @gmail.com
+              </a>
             </p>
           </li>
         </ul>
