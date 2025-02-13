@@ -101,7 +101,7 @@ export default function Education() {
                   </span>
                 </div>
                 {cert.images ? (
-                  <div className="flex items-center mt-2">
+                  <div className="flex items-center mt-2 mr-4">
                     <button
                       className="text-gray-300 hover:text-gray-200"
                       onClick={handlePrev}
@@ -160,18 +160,14 @@ export default function Education() {
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
           <div className="relative">
-            <button
-              className="absolute top-0 right-0 p-2 text-white"
-              onClick={closeModal}
-            >
-              &times;
-            </button>
+        
             <Image
               src={selectedImage}
               alt="Certification"
               width={800}
               height={600}
               className="max-w-full max-h-screen object-contain"
+              onClick={closeModal}
             />
           </div>
         </div>
