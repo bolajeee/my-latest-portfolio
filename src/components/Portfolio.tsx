@@ -9,35 +9,35 @@ import proj4 from "../assets/proj4.jpg";
 
 const projects = [
   {
-    title: "Commerce Website",
+    title: "Finance Dashboard",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "React, Firebase",
-    git: "https://github.com/bolajeee/MernFullstackApp ",
-    // link: "#",
+    git: "https://bolajeeefinancedashboard.netlify.app/",
+    link: "https://bolajeeefinancedashboard.netlify.app/",
     src: proj4,
   },
   {
-    title: "Movie Comparison Site",
+    title: "AI summarizer",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "MongoDb, Express, React",
     git: "https://github.com/bolajeee/movie-compare-site",
-    // link: "https://bolajeee.github.io/movie-compare-site/",
+    link: "https://elaborate-kringle-2822b5.netlify.app/",
     src: proj1,
   },
   {
-    title: "Portfolio Website",
+    title: "Movies Compare site",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "Next.js, Tailwind CSS",
     git: "https://github.com/bolajeee/Brainwave-AI-",
-    // link: "https://bolajeee.github.io/Brainwave-AI-/",
+    link: "https://sparcklingclean.netlify.app/",
     src: proj2,
   },
   {
-    title: "Blog Platform",
+    title: "Expences Dashboard",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
     devstack: "Node.js, React, MongoDB",
     git: "https://github.com/bolajeee/AI-summarizer",
-    // link: "https://bolajeee.github.io/AI-summarizer/",
+    link: "https://bolajee-expenses-dashboard.netlify.app/",
     src: proj3,
   },
 ];
@@ -46,7 +46,7 @@ const Portfolio = () => {
   return (
     <div
       className="text-white bg-gradient-to-b from-black to-[#381a5f] py-32"
-      id="portfolio"
+      id="projects"
     >
       {/* Header */}
       <h1 className="text-4xl md:text-6xl font-bold text-center mb-32">
@@ -82,14 +82,14 @@ const Portfolio = () => {
                 {project.devstack}
               </p>
 
-              {/* Links */}
+              
               <div className="flex justify-center md:justify-start gap-6 mt-4">
-                {/* <a
+                <a
                   href={project.link}
                   className="px-4 py-2 bg-orange-400 text-black rounded-md hover:bg-orange-500 transition"
                 >
                   Live Demo
-                </a> */}
+                </a>
                 <a
                   href={project.git}
                   className="px-4 py-2 border border-orange-400 text-orange-400 rounded-md hover:bg-orange-400 hover:text-black transition"
@@ -112,6 +112,7 @@ const Portfolio = () => {
                 src={project.src}
                 alt={project.title}
                 className="h-[300px] md:h-[350px] lg:h-[400px] w-full object-cover"
+               
               />
             </motion.div>
           </motion.div>

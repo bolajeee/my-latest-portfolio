@@ -20,19 +20,19 @@ const About = () => {
       title: "Virtual Assistance",
       desc: "xxxxxx",
       src: pc,
-      href: "/about/experience",
+      href: "https://www.virtualbadge.io/certificate-validator?credential=cer-71832355-815a-462c-891c-406757e5",
     },
     {
       title: "Web Development",
       desc: "xxxxxx",
       src: card,
-      href: "/about/interests",
+      href: "#projects",
     },
     {
       title: "Graphics Design",
       desc: "xxxxxx",
       src: finance,
-      href: "/about/interests",
+      href: "/about/design",
     },
   ];
 
