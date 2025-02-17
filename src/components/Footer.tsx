@@ -12,16 +12,16 @@ const Footer = () => {
           href="https://www.linkedin.com/in/bolajeee/"
           className="hover:text-gray-300"
         >
-          <FaLinkedin size={20} />
+          <FaLinkedin size={20} className="hover:size-8" />
         </a>
-        <a href="https://x.com/_bolajeee" className="hover:text-gray-300">
-          <FaTwitter size={20} />
+        <a href="https://x.com/_bolajeee" className="hover:text-gray-300 ">
+          <FaTwitter size={20} className="hover:size-8" />
         </a>
         <a
           href="https://www.instagram.com/_bolajeee/"
           className="hover:text-gray-300"
         >
-          <FaInstagram size={20} />
+          <FaInstagram size={20} className="hover:size-8" />
         </a>
       </div>
     </div>

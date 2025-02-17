@@ -69,7 +69,7 @@ export default function DesignPortfolio() {
           ← Back to Home
         </Link>
 
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl font-bold mb-12 text-center text-gray-200"
@@ -94,8 +94,12 @@ export default function DesignPortfolio() {
               className="object-contain"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-opacity-50 text-white p-4">
-              <h3 className="text-xl font-semibold">{designs[currentIndex].title}</h3>
-              <p className="text-sm text-gray-300">{designs[currentIndex].description}</p>
+              <h3 className="text-xl font-semibold">
+                {designs[currentIndex].title}
+              </h3>
+              <p className="text-sm text-gray-300">
+                {designs[currentIndex].description}
+              </p>
             </div>
           </motion.div>
 

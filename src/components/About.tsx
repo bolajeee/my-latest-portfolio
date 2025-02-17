@@ -4,34 +4,34 @@ import Image from "next/image";
 import { motion } from "framer-motion"; // Add Framer Motion
 import book from "../assets/book.png";
 import pc from "../assets/pc.png";
-import card from "../assets/card.png";
-import finance from "../assets/finance.png";
+import VA from "../assets/VA.png";
+import design from "../assets/design.png";
 import Link from "next/link";
 
 const About = () => {
   const cards = [
     {
       title: "Educational Background",
-      desc: "xxxxxx",
+      desc: "Graduated with second-class upper honors in Food Engineering from the University of Ilorin, overcoming challenges like the COVID-19 pandemic and strikes.",
       src: book,
       href: "/about/education",
     },
     {
       title: "Virtual Assistance",
-      desc: "xxxxxx",
-      src: pc,
+      desc: "Certified in ALX Virtual Assistance, skilled in administrative support, email management, scheduling, and customer relations.",
+      src: VA,
       href: "https://www.virtualbadge.io/certificate-validator?credential=cer-71832355-815a-462c-891c-406757e5",
     },
     {
       title: "Web Development",
-      desc: "xxxxxx",
-      src: card,
+      desc: "Proficient in front-end development using React and Vite, with experience in building responsive and interactive web applications.",
+      src: pc,
       href: "#projects",
     },
     {
       title: "Graphics Design",
-      desc: "xxxxxx",
-      src: finance,
+      desc: "Experienced in creating visually appealing designs using tools like Canva and Photoshop for branding, social media, and presentations.",
+      src: design,
       href: "/about/design",
     },
   ];
@@ -41,7 +41,7 @@ const About = () => {
       className="mx-auto px-4 py-20 bg-gradient-to-b from-gray-800 to-black"
       id="about"
     >
-      <h1 className="text-gray-200 text-6xl max-w-[360px] mx-auto font-semibold p-4 mb-8 text-center">
+      <h1 className="text-gray-200 text-4xl md:text-6xl max-w-[360px] mx-auto font-semibold p-4 mb-8 text-center">
         About
         <span className="text-orange-400 px-4">Me</span>
       </h1>
@@ -71,15 +71,15 @@ const About = () => {
                   <Image
                     src={card.src}
                     alt={card.title}
-                    className="w-auto h-[100px] md:h-[130px] grayscale hover:grayscale-0 transition duration-300"
+                    className="w-[250px] sm:w-[100px] h-[150px] sm:h-[50px] md:h-[130px] grayscale hover:grayscale-0 transition duration-300"
                   />
                 </motion.div>
 
                 <div className="flex flex-col mt-4 md:mt-0 md:ml-4">
-                  <h2 className="text-xl md:text-2xl font-bold text-gray-200">
+                  <h2 className="text-lg md:text-xl font-bold text-gray-200">
                     {card.title}
                   </h2>
-                  <p className="text-md md:text-lg text-gray-300">
+                  <p className="text-sm md:text-md text-gray-300">
                     {card.desc}
                   </p>
                 </div>

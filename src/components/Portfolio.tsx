@@ -2,43 +2,52 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import proj1 from "../assets/proj1.jpg";
-import proj2 from "../assets/proj2.jpg";
+import proj1 from "../assets/proj1.png";
+import proj2 from "../assets/proj2.png";
 import proj3 from "../assets/proj3.png";
-import proj4 from "../assets/proj4.jpg";
+import proj4 from "../assets/proj4.png";
+import proj5 from "../assets/proj5.png";
 
 const projects = [
   {
-    title: "Finance Dashboard",
+    title: "Crypto Monitoring Dashboard",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-    devstack: "React, Firebase",
+    devstack: "Reactjs, Chakra UI",
     git: "https://bolajeeefinancedashboard.netlify.app/",
     link: "https://bolajeeefinancedashboard.netlify.app/",
-    src: proj4,
-  },
-  {
-    title: "AI summarizer",
-    desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-    devstack: "MongoDb, Express, React",
-    git: "https://github.com/bolajeee/movie-compare-site",
-    link: "https://elaborate-kringle-2822b5.netlify.app/",
     src: proj1,
   },
   {
-    title: "Movies Compare site",
+    title: "AI Summarizer",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-    devstack: "Next.js, Tailwind CSS",
-    git: "https://github.com/bolajeee/Brainwave-AI-",
-    link: "https://sparcklingclean.netlify.app/",
+    devstack: "Reactjs",
+    git: "https://github.com/bolajeee/AI-summarizer",
+    link: "https://elaborate-kringle-2822b5.netlify.app/",
     src: proj2,
   },
   {
-    title: "Expences Dashboard",
+    title: "Fintech Landing Page",
     desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-    devstack: "Node.js, React, MongoDB",
+    devstack: "Reactjs",
+    git: "https://github.com/bolajeee/AI-summarizer",
+    link: "https://fintech-landing-page-interpulse.netlify.app/",
+    src: proj3,
+  },
+  {
+    title: "Expenses Dashboard",
+    desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+    devstack: "Node.js, Reactjs",
     git: "https://github.com/bolajeee/AI-summarizer",
     link: "https://bolajee-expenses-dashboard.netlify.app/",
-    src: proj3,
+    src: proj4,
+  },
+  {
+    title: "Modern AI Landing Page",
+    desc: "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+    devstack: "Reactjs",
+    git: "https://github.com/bolajeee/Brainwave-AI-",
+    link: "https://silly-torte-e21728.netlify.app/",
+    src: proj5,
   },
 ];
 
@@ -67,7 +76,7 @@ const Portfolio = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className={`flex flex-col ${
               index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
-            } items-center gap-8 md:gap-16`}
+            } items-center justify-between gap-8 md:gap-16`}
           >
             {/* Text Content */}
             <div className="space-y-4 max-w-lg text-center md:text-left">
@@ -82,7 +91,6 @@ const Portfolio = () => {
                 {project.devstack}
               </p>
 
-              
               <div className="flex justify-center md:justify-start gap-6 mt-4">
                 <a
                   href={project.link}
@@ -111,8 +119,7 @@ const Portfolio = () => {
               <Image
                 src={project.src}
                 alt={project.title}
-                className="h-[300px] md:h-[350px] lg:h-[400px] w-full object-cover"
-               
+                className="h-[300px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[550px] object-cover"
               />
             </motion.div>
           </motion.div>

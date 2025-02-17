@@ -1,9 +1,54 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import phone from "../assets/phone.png";
 import mail from "../assets/mail.png";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    tel: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_pw7xrpv",
+        "template_xulpt9r",
+        formData,
+        "oloR0CX5NnmNzgmOq"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Email sent successfully!");
+          setFormData({
+            firstname: "",
+            lastname: "",
+            email: "",
+            tel: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          alert("Email sending failed!");
+        }
+      );
+  };
+
   return (
     <div
       className="max-w-[1100px] mx-auto flex flex-col lg:flex-row text-white/70 p-8 rounded-lg space-y-12 lg:space-y-0 lg:space-x-12 py-32"
@@ -39,24 +84,24 @@ const Contact = () => {
           Feel free to get in touch using the form below:
         </p>
 
-        <form
-          className="space-y-6"
-          action="https://getform.io/f/axoovndb"
-          method="POST"
-        >
+        <form className="space-y-6" onSubmit={sendEmail}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
               type="text"
-              name="first_name"
+              name="firstname"
               className="bg-black/70 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder-gray-400"
               placeholder="First Name"
+              value={formData.firstname}
+              onChange={handleChange}
               required
             />
             <input
               type="text"
-              name="last_name"
+              name="lastname"
               className="bg-black/70 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder-gray-400"
               placeholder="Last Name"
+              value={formData.lastname}
+              onChange={handleChange}
               required
             />
           </div>
@@ -65,19 +110,25 @@ const Contact = () => {
             name="email"
             className="bg-black/70 rounded-lg p-3 w-full text-white focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder-gray-400"
             placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
             required
           />
           <input
             type="tel"
-            name="phone"
+            name="tel"
             className="bg-black/70 rounded-lg p-3 w-full text-white focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder-gray-400"
             placeholder="Phone Number"
+            value={formData.tel}
+            onChange={handleChange}
             required
           />
           <textarea
             name="message"
             className="bg-black/70 rounded-lg p-3 w-full text-white focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder-gray-400"
             placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
             required
           />
           <button
