@@ -132,7 +132,7 @@ export default function DesignPortfolio() {
         </div>
 
         {/* Canva Portfolio Button */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <a
             href="https://www.canva.com/your-portfolio-url" // Replace with your actual Canva portfolio URL
             target="_blank"
@@ -141,7 +141,7 @@ export default function DesignPortfolio() {
           >
             View Full Portfolio on Canva →
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

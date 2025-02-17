@@ -71,7 +71,7 @@ const About = () => {
                   <Image
                     src={card.src}
                     alt={card.title}
-                    className="w-[250px] sm:w-[100px] h-[150px] sm:h-[50px] md:h-[130px] grayscale hover:grayscale-0 transition duration-300"
+                    className="w-[150px] sm:w-[200px] h-[150px] sm:h-[50px] md:h-[130px] grayscale hover:grayscale-0 transition duration-300"
                   />
                 </motion.div>
 
