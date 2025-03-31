@@ -7,49 +7,49 @@ import { motion } from "framer-motion";
 // Import your design images here
 const designs = [
   {
-    title: "Design 1",
+    title: "TP Fashion Brand",
     description: "Description of design 1",
     image: "/assets/designs/design1.jpg",
     width: 320,
     height: 240,
   },
   {
-    title: "Design 2",
+    title: "Whole Sale store",
     description: "Description of design 2",
     image: "/assets/designs/design2.png",
     width: 320,
     height: 240,
   },
   {
-    title: "Design 3",
+    title: "Coffee Shop",
     description: "Description of design 3",
     image: "/assets/designs/design3.png",
     width: 320,
     height: 240,
   },
   {
-    title: "Design 4",
+    title: "Coffee Shop logo",
     description: "Description of design 4",
     image: "/assets/designs/design4.png",
     width: 320,
     height: 240,
   },
   {
-    title: "Design 5",
+    title: "New year design",
     description: "Description of design 5",
     image: "/assets/designs/design5.png",
     width: 320,
     height: 240,
   },
   {
-    title: "Design 6",
+    title: "Makeup Artist",
     description: "Description of design 6",
     image: "/assets/designs/design6.png",
     width: 320,
     height: 240,
   },
   {
-    title: "Design 7",
+    title: "Valentine Logo",
     description: "Description of design 7",
     image: "/assets/designs/design7.png",
     width: 320,
@@ -73,10 +73,9 @@ export default function DesignPortfolio() {
     );
   };
 
-  const openModal = (image) => {
+  const openModal = (image: string) => {
     setSelectedImage(image);
   };
-
   const closeModal = () => {
     setSelectedImage(null);
   };
