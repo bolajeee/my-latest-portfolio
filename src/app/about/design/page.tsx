@@ -74,8 +74,9 @@ export default function DesignPortfolio() {
   };
 
   const openModal = (image: string) => {
-    setSelectedImage(image);
+    setSelectedImage(image as any);
   };
+
   const closeModal = () => {
     setSelectedImage(null);
   };
