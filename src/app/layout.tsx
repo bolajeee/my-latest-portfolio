@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "../context/ThemeContext"; // Import ThemeProvider
+import Navbar from "@/components/Navbar"; // Navbar is already reintroduced
+import Footer from "@/components/Footer"; // Reintroduce Footer import
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          <Navbar /> {/* Navbar is already reintroduced */}
+          {children}
+          <Footer /> {/* Reintroduce Footer rendering */}
+        </ThemeProvider>
       </body>
     </html>
   );

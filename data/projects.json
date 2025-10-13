@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Smile Ecommerce Site",
+    "description": "A sleek, full-featured e-commerce platform built with Next.js, TypeScript, and Prisma. Smile Fashion Brand delivers a modern shopping experience with dark mode, real-time cart updates, and a responsive, mobile-first UI. Featuring secure authentication via NextAuth.js, advanced product filtering, and an intuitive admin dashboard for product and order management, it embodies both technical precision and design elegance.",
+    "techStack": ["Next.js 13+", "TypeScript", "Prisma", "PostgreSQL", "NextAuth.js"],
+    "keyFeatures": ["Dark mode", "Cart & checkout flow", "Role-based admin panel", "RESTful API", "Animated UI components"],
+    "image": "/assets/proj1.png",
+    "liveLink": "https://smile-fashion.vercel.app/",
+    "githubLink": "https://github.com/bolajeee/Smile_fashion_brand",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "2",
+    "title": "Admin Management System",
+    "description": "A modern, responsive admin dashboard built with React, Vite, and TailwindCSS. This system offers a unified interface for administrators and users to manage tasks, memos, messages, and performance metrics. It features secure authentication, real-time communication, dynamic task tracking, and full customization options for an efficient workflow.",
+    "techStack": ["React", "Vite", "TailwindCSS", "Zustand", "React Router", "Axios"],
+    "keyFeatures": ["Role-based access control", "Real-time messaging", "Task and report management", "Responsive design", "Light/dark mode support"],
+    "image": "/assets/proj2.png",
+    "liveLink": "https://admin-management-frontend.vercel.app/",
+    "githubLink": "https://github.com/bolajeee/Admin-management-Frontend",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "3",
+    "title": "Ai Summarizer",
+    "description": "An intelligent web application that transforms lengthy articles into concise, meaningful summaries. Built with React, Redux Toolkit, and Vite, this AI-powered summarizer uses advanced natural language processing to deliver quick, coherent summaries that help users grasp key ideas instantly. Designed with performance and accessibility in mind, it features a sleek interface, customizable summary length, and a responsive layout for seamless use across devices.",
+    "techStack": ["React", "Vite", "Tailwind CSS", "Redux Toolkit", "RTK Query"],
+    "keyFeatures": ["AI-based text summarization", "Configurable summary length", "Responsive design", "Summary history", "Robust state management"],
+    "image": "/assets/proj3.png",
+    "liveLink": "https://ai-summarizer-sable-six.vercel.app/",
+    "githubLink": "https://github.com/bolajeee/AI-summarizer",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "4",
+    "title": "Fitness Tracker Api",
+    "description": "A RESTful backend built with Django REST Framework for managing user fitness activities. The Fitness Tracker API enables users to log, update, and track their workout activities while providing authentication and secure data management through JWT authorization. It includes activity history filtering, performance metrics, and full CRUD operations for both users and activities.",
+    "techStack": ["Django", "Django REST Framework", "JWT Authentication", "SQLite/PostgreSQL"],
+    "keyFeatures": ["User and activity CRUD", "JWT-based authentication", "Activity history and metrics tracking", "Date/type filtering", "Input validation"],
+    "image": "/assets/proj4.png",
+    "liveLink": "https://www.loom.com/share/6c4649e79ef048abb4314ad807e9070e?sid=4e61fae3-f5b1-4fd8-99d8-d92efc946945",
+    "githubLink": "https://github.com/bolajeee/Fitness-Tracker-Api",
+    "width": 800,
+    "height": 600
+  }
+]

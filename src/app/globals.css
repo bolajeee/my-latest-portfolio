@@ -1,13 +1,32 @@
+@import 'animate.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  background-color: black;
+  /* Light theme variables */
+  --background: 255 255 255; /* white */
+  --foreground: 0 0 0;     /* black */
+  --primary: 249 115 22;   /* orange-500 */
+  --secondary: 107 114 128; /* gray-500 */
+}
+
+.dark {
+  /* Dark theme variables */
+  --background: 26 32 44;   /* dark blue */
+  --foreground: 255 255 255; /* white */
+  --primary: 249 115 22;   /* orange-500 */
+  --secondary: 156 163 175; /* gray-400 */
+}
+
+html {
+  background-color: rgb(var(--background)); /* Apply theme background to html */
 }
 
 body {
-  background: var(--background-gradient);
+  color: rgb(var(--foreground));
+  /* background-color: rgb(var(--background)); Removed from body to avoid double background */
 }
 
 
@@ -24,4 +43,17 @@ body {
 .animate-gradient-xy {
   animation: gradient-xy 10s ease-in infinite;
   background-size: 200% 200%;
+}
+
+@keyframes pulse-custom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.pulse-on-hover:hover {
+  animation: pulse-custom 1s infinite;
 }

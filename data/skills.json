@@ -1,0 +1,46 @@
+[
+  {
+    "category": "Frontend",
+    "skills": [
+      {"name": "HTML5", "icon": "FaHtml5"},
+      {"name": "CSS3", "icon": "FaCss3Alt"},
+      {"name": "JavaScript", "icon": "FaJsSquare"},
+      {"name": "TypeScript", "icon": "SiTypescript"},
+      {"name": "React", "icon": "FaReact"},
+      {"name": "Next.js", "icon": "SiNextdotjs"},
+      {"name": "Tailwind CSS", "icon": "SiTailwindcss"}
+    ]
+  },
+  {
+    "category": "Backend",
+    "skills": [
+      {"name": "Node.js", "icon": "FaNodeJs"},
+      {"name": "Express.js", "icon": "SiExpress"},
+      {"name": "MongoDB", "icon": "SiMongodb"}
+    ]
+  },
+  {
+    "category": "Tools & Platforms",
+    "skills": [
+      {"name": "Git", "icon": "FaGitAlt"},
+      {"name": "GitHub", "icon": "FaGithub"},
+      {"name": "Vercel", "icon": "SiVercel"},
+      {"name": "Figma", "icon": "FaFigma"}
+    ]
+  },
+  {
+    "category": "Design",
+    "skills": [
+      {"name": "Canva", "icon": "SiCanva"},
+      {"name": "Photoshop", "icon": "SiAdobephotoshop"}
+    ]
+  },
+  {
+    "category": "Other",
+    "skills": [
+      {"name": "Google Docs", "icon": "FaGoogle"},
+      {"name": "Google Drive", "icon": "FaGoogleDrive"},
+      {"name": "Google Sheets", "icon": "SiGooglesheets"}
+    ]
+  }
+]
