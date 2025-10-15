@@ -1,36 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import useEmblaCarousel from 'embla-carousel-react'
 
-const resumeSections = [
-  {
-    title: "Educational Background",
-    items: [
-      {
-        name: "Food Engineering, University of Ilorin",
-        details: "Graduated with second-class upper honors, overcoming challenges like the COVID-19 pandemic and strikes.",
-        link: "/about/education",
-      },
-    ],
-  },
-  {
-    title: "Skills & Expertise",
-    items: [
-      {
-        name: "Web Development",
-        details: "Proficient in front-end development using React and Vite, with experience in building responsive and interactive web applications.",
-        link: "#projects",
-      },
-      {
-        name: "Graphics Design",
-        details: "Experienced in creating visually appealing designs using tools like Canva and Photoshop for branding, social media, and presentations.",
-        link: "/about/design",
-      },
-    ],
-  },
-  {
-    title: "Certifications",
-  items: [
+const certifications = [
   {
     name: "Backend Web Development (Python)",
     details: "ALX-certified in Backend Web Development with proficiency in Python, Flask, and RESTful API architecture. Skilled in database modeling using PostgreSQL and MongoDB, authentication systems, and server-side logic optimization for scalable web applications.",
@@ -76,43 +49,21 @@ const resumeSections = [
     details: "Nestlé-certified in Design of Experiments, proficient in factorial and response surface methodologies for process optimization. Skilled in Minitab and Excel for statistical analysis, variance interpretation, and data-driven decision-making in product and process design.",
     link: "https://drive.google.com/file/d/1osuWyo0nX0Gk4SaGocWPhCroJaql7EhU/view?usp=drive_link",
   },
-]
-  },
 ];
 
-const About = () => {
-  return (
-    <div
-      className="mx-auto px-4 py-20 bg-background text-foreground" // Use theme variables
-      id="about"
-    >
-      <h1 className="text-4xl md:text-6xl font-bold text-center mb-16">
-        About <span className="text-primary">Me</span>
-      </h1>
+import Autoplay from 'embla-carousel-autoplay'
 
-      <div className="max-w-[900px] mx-auto space-y-12">
-        {resumeSections.map((section, sectionIndex) => (
-          <div key={sectionIndex} className="p-6 rounded-lg shadow-md bg-white/5 dark:bg-black/5 border border-secondary/50"> {/* Theme-aware styling */}
-            <h2 className="text-3xl font-semibold mb-6 text-primary border-b pb-2 border-primary/50">
-              {section.title}
-            </h2>
-            <div className="space-y-8">
-              {section.items.map((item, itemIndex) => (
-                <div key={itemIndex}>
-                  <h3 className="text-xl font-medium text-foreground">
-                    {item.link ? (
-                      <Link href={item.link} className="block pulse-on-hover p-4 -m-4 rounded-lg hover:bg-white/10 dark:hover:bg-black/10 transition-colors duration-300"> {/* Apply pulse-on-hover and theme-aware hover background */}
-                        <span className="hover:underline text-primary">{item.name}</span>
-                      </Link>
-                    ) : (
-                      item.name
-                    )}
-                  </h3>
-                  <p className="text-secondary mt-2 leading-relaxed">
-                    {item.details}
-                  </p>
-                </div>
-              ))}
+const CertificationsCarousel = ({ certifications }) => {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
+
+  return (
+    <div className="overflow-hidden" ref={emblaRef}>
+      <div className="flex">
+        {certifications.map((item, i) => (
+          <div key={i} className="flex-[0_0_100%] md:flex-[0_0_33.333%] p-4">
+            <div className="p-6 rounded-lg shadow bg-white/5 border border-secondary/50">
+              <h3 className="text-xl font-semibold text-primary">{item.name}</h3>
+              <p className="text-secondary mt-2 hidden md:block">{item.details}</p>
             </div>
           </div>
         ))}
@@ -121,4 +72,21 @@ const About = () => {
   );
 };
 
-export default About;
+const Certifications = () => {
+  return (
+    <div
+      className="mx-auto px-4 py-20 bg-background text-foreground"
+      id="certifications"
+    >
+      <h1 className="text-4xl md:text-6xl font-bold text-center mb-16">
+        My <span className="text-primary">Certifications</span>
+      </h1>
+
+      <div className="max-w-[900px] mx-auto">
+        <CertificationsCarousel certifications={certifications} />
+      </div>
+    </div>
+  );
+};
+
+export default Certifications;

@@ -57,3 +57,36 @@ body {
 .pulse-on-hover:hover {
   animation: pulse-custom 1s infinite;
 }
+
+.slick-slider {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scrolling-wrapper {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.scrolling-wrapper:hover {
+  animation-play-state: paused;
+}
+
