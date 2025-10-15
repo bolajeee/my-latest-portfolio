@@ -16,7 +16,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
