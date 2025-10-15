@@ -3,7 +3,13 @@ import React from "react";
 import Link from "next/link";
 import useEmblaCarousel from 'embla-carousel-react'
 
-const certifications = [
+interface Certification {
+  name: string;
+  details: string;
+  link: string;
+}
+
+const certifications: Certification[] = [
   {
     name: "Backend Web Development (Python)",
     details: "ALX-certified in Backend Web Development with proficiency in Python, Flask, and RESTful API architecture. Skilled in database modeling using PostgreSQL and MongoDB, authentication systems, and server-side logic optimization for scalable web applications.",
@@ -53,13 +59,13 @@ const certifications = [
 
 import Autoplay from 'embla-carousel-autoplay'
 
-const CertificationsCarousel = ({ certifications }) => {
+const CertificationsCarousel = ({ certifications }: { certifications: Certification[] }) => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
 
   return (
     <div className="overflow-hidden" ref={emblaRef}>
       <div className="flex">
-        {certifications.map((item, i) => (
+        {certifications.map((item: Certification, i: number) => (
           <div key={i} className="flex-[0_0_100%] md:flex-[0_0_33.333%] p-4">
             <div className="p-6 rounded-lg shadow bg-white/5 border border-secondary/50">
               <h3 className="text-xl font-semibold text-primary">{item.name}</h3>
