@@ -10,10 +10,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "rgb(var(--background))",
-        foreground: "rgb(var(--foreground))",
-        primary: "rgb(var(--primary))",
-        secondary: "rgb(var(--secondary))",
+        background: "rgb(var(--background-start-rgb))",
+        foreground: "rgb(var(--foreground-rgb))",
+        primary: "rgb(var(--primary-color))",
+        secondary: "rgb(var(--secondary-color))",
+        accent: "rgb(var(--accent-color))",
+        orange: "rgb(var(--orange-color))",
+        "btn-primary": {
+          DEFAULT: "rgb(var(--btn-primary-bg))",
+          hover: "rgb(var(--primary-color))",
+        },
+        "btn-secondary": {
+          DEFAULT: "rgb(var(--btn-secondary-bg))",
+          hover: "rgb(var(--secondary-color))",
+        },
+        "btn-orange-solid": {
+          DEFAULT: "rgb(var(--btn-orange-solid-bg))",
+          hover: "rgb(var(--orange-color))",
+        },
+        "btn-orange-outline": {
+          DEFAULT: "rgb(var(--btn-orange-outline-bg))",
+          hover: "rgb(var(--orange-color))",
+        },
       },
     },
   },

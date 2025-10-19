@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./embla.css";
-import { ThemeProvider } from "@/context/ThemeContext";
+import { ThemeProviders } from "@/components/ThemeProviders";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
@@ -32,11 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>
-          <Navbar /> {/* Navbar is already reintroduced */}
+        <ThemeProviders>
+          <Navbar />
           {children}
-          <Footer /> {/* Reintroduce Footer rendering */}
-        </ThemeProvider>
+          <Footer />
+        </ThemeProviders>
       </body>
     </html>
   );

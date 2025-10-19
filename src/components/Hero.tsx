@@ -5,6 +5,7 @@ import profilepic from "../assets/profilepic.jpg";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion"; // Ensure motion is imported
+import { Button } from "./Button";
 
 const Hero = () => {
   const typedElement = useRef<HTMLSpanElement>(null);
@@ -58,12 +59,11 @@ const Hero = () => {
           </p>
           {/* Call to Action Buttons */}
           <div className="flex justify-center md:justify-start gap-4 mt-6">
-            <Link href="#projects" className="px-6 py-3 bg-primary text-background rounded-md font-semibold hover:bg-primary/80 transition-colors duration-300">
-              See My Work
+            <Link href="#projects">
+              <Button>See My Work</Button>
             </Link>
-            {/* Add a Download CV button if desired */}
-            <a href="https://drive.google.com/file/d/1Kietx7Q18Xsa_bZg1yiAXLmE5Bhl0KvG/view?usp=sharing" download className="px-6 py-3 border border-primary text-primary rounded-md font-semibold hover:bg-primary/10 transition-colors duration-300">
-              Download CV
+            <a href="https://drive.google.com/file/d/1Kietx7Q18Xsa_bZg1yiAXLmE5Bhl0KvG/view?usp=sharing" download>
+              <Button variant="outline">Download CV</Button>
             </a>
           </div>
         </motion.div>

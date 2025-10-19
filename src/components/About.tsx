@@ -28,56 +28,7 @@ const resumeSections = [
       },
     ],
   },
-  {
-    title: "Certifications",
-  items: [
-  {
-    name: "Backend Web Development (Python)",
-    details: "ALX-certified in Backend Web Development with proficiency in Python, Flask, and RESTful API architecture. Skilled in database modeling using PostgreSQL and MongoDB, authentication systems, and server-side logic optimization for scalable web applications.",
-    link: "https://drive.google.com/file/d/1rKMRAT1rfhd644Ss1OWFBJK5YIZ-aht5/view?usp=sharing",
-  },
-  {
-    name: "ALX Virtual Assistance",
-    details: "ALX-certified in Virtual Assistance with expertise in remote team coordination, document management, and workflow automation using Google Workspace, Notion, and CRM tools. Adept in professional correspondence, meeting scheduling, and client relationship management.",
-    link: "https://www.virtualbadge.io/certificate-validator?credential=cer-71832355-815a-462c-891c-406757e5",
-  },
-  {
-    name: "AI Starter Kit",
-    details: "ALX-certified in Artificial Intelligence Fundamentals, with a foundation in machine learning workflows, supervised and unsupervised learning, data preprocessing, and model evaluation. Familiar with Python libraries such as scikit-learn, NumPy, and pandas for AI experimentation.",
-    link: "https://drive.google.com/file/d/1BKyXRIcrAw9fa864N1aMtMd0mLwianKi/view?usp=drive_link",
-  },
-  {
-    name: "Professional Foundation",
-    details: "ALX Professional Foundation certification demonstrating excellence in communication, collaboration, agile teamwork, and critical problem-solving. Experienced in professional ethics, adaptability, and remote work efficiency across cross-functional teams.",
-    link: "https://drive.google.com/file/d/15qgVsRBC9-44U9vYyMpQ0gymJAMD376n/view?usp=drive_link",
-  },
-  {
-    name: "Backend Development",
-    details: "Advanced ALX certification in Backend Development, focused on designing and deploying production-ready APIs. Proficient in Flask, Django, and Express.js with skills in database integration, token-based authentication (JWT), and cloud deployment via AWS and Render.",
-    link: "https://drive.google.com/file/d/1lCuJ0dj_-sakKXo8c4Q16RdHDG27x69w/view?usp=drive_link",
-  },
-  {
-    name: "Food Product Development",
-    details: "Nestlé-certified in Food Product Development, experienced in prototype formulation, sensory evaluation, and quality assurance. Skilled in product ideation, market analysis, food safety compliance (HACCP), and cross-functional project execution for innovation pipelines.",
-    link: "https://drive.google.com/file/d/1YeMisDMmI3pSnOpojtW4E2K-JpE6wZgZ/view?usp=drive_link",
-  },
-  {
-    name: "Project Management",
-    details: "Nestlé-certified in Project Management with strong command of planning, scheduling, and execution using tools such as Trello, Asana, and Gantt charts. Skilled in stakeholder communication, risk analysis, and resource optimization through Agile and Waterfall methodologies.",
-    link: "https://drive.google.com/file/d/1crwc640ZXOXcwmee6kIroJIfD6Po3uqN/view?usp=drive_link",
-  },
-  {
-    name: "Consumer Understanding",
-    details: "Nestlé-certified in Consumer Understanding, with expertise in market segmentation, survey design, sensory testing, and behavioral analytics. Adept at translating consumer insights into data-driven product innovation and brand positioning strategies.",
-    link: "https://drive.google.com/file/d/1TGOPsp1nDHFTWgUFz9OM4lwAQU5ZiRsA/view?usp=drive_link",
-  },
-  {
-    name: "Design of Experiments (DoE)",
-    details: "Nestlé-certified in Design of Experiments, proficient in factorial and response surface methodologies for process optimization. Skilled in Minitab and Excel for statistical analysis, variance interpretation, and data-driven decision-making in product and process design.",
-    link: "https://drive.google.com/file/d/1osuWyo0nX0Gk4SaGocWPhCroJaql7EhU/view?usp=drive_link",
-  },
-]
-  },
+ 
 ];
 
 const About = () => {
@@ -101,7 +52,7 @@ const About = () => {
                 <div key={itemIndex}>
                   <h3 className="text-xl font-medium text-foreground">
                     {item.link ? (
-                      <Link href={item.link} className="block pulse-on-hover p-4 -m-4 rounded-lg hover:bg-white/10 dark:hover:bg-black/10 transition-colors duration-300"> {/* Apply pulse-on-hover and theme-aware hover background */}
+                      <Link href={item.link} className="block animate-pulse p-4 -m-4 rounded-lg hover:bg-white/10 dark:hover:bg-black/10 transition-colors duration-300"> {/* Apply pulse-on-hover and theme-aware hover background */}
                         <span className="hover:underline text-primary">{item.name}</span>
                       </Link>
                     ) : (

@@ -8,7 +8,14 @@
       {"name": "TypeScript", "icon": "SiTypescript"},
       {"name": "React", "icon": "FaReact"},
       {"name": "Next.js", "icon": "SiNextdotjs"},
-      {"name": "Tailwind CSS", "icon": "SiTailwindcss"}
+      {"name": "Redux", "icon": "SiRedux"},
+      {"name": "Vue.js", "icon": "SiVuedotjs"},
+      {"name": "Tailwind CSS", "icon": "SiTailwindcss"},
+      {"name": "Python", "icon": "SiPython"},
+      {"name": "Django", "icon": "SiDjango"},
+      {"name": "Sass", "icon": "FaSass"},
+      {"name": "Bootstrap", "icon": "SiBootstrap"},
+      {"name": "Chakra UI", "icon": "SiChakraui"}
     ]
   },
   {
@@ -16,7 +23,12 @@
     "skills": [
       {"name": "Node.js", "icon": "FaNodeJs"},
       {"name": "Express.js", "icon": "SiExpress"},
-      {"name": "MongoDB", "icon": "SiMongodb"}
+      {"name": "MongoDB", "icon": "SiMongodb"},
+      {"name": "Firebase", "icon": "SiFirebase"},
+      {"name": "PostgreSQL", "icon": "SiPostgresql"},
+      {"name": "MySQL", "icon": "SiMysql"},
+      {"name": "Prisma", "icon": "SiPrisma"},
+      {"name": "FastAPI", "icon": "SiFastapi"}
     ]
   },
   {

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-
 import useEmblaCarousel from 'embla-carousel-react'
+import Link from 'next/link';
 
 interface Certification {
   name: string;
@@ -67,10 +67,12 @@ const CertificationsCarousel = ({ certifications }: { certifications: Certificat
       <div className="flex">
         {certifications.map((item: Certification, i: number) => (
           <div key={i} className="flex-[0_0_100%] md:flex-[0_0_33.333%] p-4">
-            <div className="p-6 rounded-lg shadow bg-white/5 border border-secondary/50">
-              <h3 className="text-xl font-semibold text-primary">{item.name}</h3>
-              <p className="text-secondary mt-2 hidden md:block">{item.details}</p>
-            </div>
+            <Link href={item.link} target="_blank" rel="noopener noreferrer">
+              <div className="p-6 rounded-lg shadow bg-white/5 border border-secondary/50 hover:bg-orange-500/10 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-orange-500">{item.name}</h3>
+                <p className="text-secondary mt-2 hidden md:block">{item.details}</p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>
@@ -85,7 +87,7 @@ const Certifications = () => {
       id="certifications"
     >
       <h1 className="text-4xl md:text-6xl font-bold text-center mb-16">
-        My <span className="text-primary">Certifications</span>
+        My <span className="text-orange-500">Certifications</span>
       </h1>
 
       <div className="max-w-[900px] mx-auto">

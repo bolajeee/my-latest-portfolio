@@ -1,60 +1,109 @@
-@import 'animate.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import "./embla.css";
+
 :root {
-  /* Light theme variables */
-  --background: 255 255 255; /* white */
-  --foreground: 0 0 0;     /* black */
-  --primary: 249 115 22;   /* orange-500 */
-  --secondary: 107 114 128; /* gray-500 */
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary-color: 37, 99, 235;
+  --secondary-color: 234, 179, 8;
+  --accent-color: 239, 68, 68;
+  --orange-color: 249, 115, 22;
+
+  --btn-primary-bg: 37, 99, 235;
+  --btn-primary-text: 255, 255, 255;
+  --btn-secondary-bg: 234, 179, 8;
+  --btn-secondary-text: 0, 0, 0;
+  --btn-orange-solid-bg: 249, 115, 22;
+  --btn-orange-solid-text: 255, 255, 255;
+  --btn-orange-outline-bg: transparent;
+  --btn-orange-outline-text: 249, 115, 22;
 }
 
-.dark {
-  /* Dark theme variables */
-  --background: 26 32 44;   /* dark blue */
-  --foreground: 255 255 255; /* white */
-  --primary: 249 115 22;   /* orange-500 */
-  --secondary: 156 163 175; /* gray-400 */
-}
+.dark:root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 17, 24, 39;
+    --background-end-rgb: 3, 7, 18;
 
-html {
-  background-color: rgb(var(--background)); /* Apply theme background to html */
-}
+    --primary-color: 59, 130, 246;
+    --secondary-color: 252, 211, 77;
+    --accent-color: 248, 113, 113;
+    --orange-color: 251, 146, 60;
+
+    --btn-primary-bg: 59, 130, 246;
+    --btn-primary-text: 255, 255, 255;
+    --btn-secondary-bg: 252, 211, 77;
+    --btn-secondary-text: 0, 0, 0;
+    --btn-orange-solid-bg: 251, 146, 60;
+    --btn-orange-solid-text: 255, 255, 255;
+    --btn-orange-outline-bg: transparent;
+    --btn-orange-outline-text: 251, 146, 60;
+  }
 
 body {
-  color: rgb(var(--foreground));
-  /* background-color: rgb(var(--background)); Removed from body to avoid double background */
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
-
-@keyframes gradient-xy {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+.btn-primary {
+  background-color: rgb(var(--btn-primary-bg));
+  color: rgb(var(--btn-primary-text));
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.animate-gradient-xy {
-  animation: gradient-xy 10s ease-in infinite;
-  background-size: 200% 200%;
+.btn-primary:hover {
+  background-color: rgb(var(--primary-color));
 }
 
-@keyframes pulse-custom {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
+.btn-secondary {
+  background-color: rgb(var(--btn-secondary-bg));
+  color: rgb(var(--btn-secondary-text));
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.pulse-on-hover:hover {
-  animation: pulse-custom 1s infinite;
+.btn-secondary:hover {
+  background-color: rgb(var(--secondary-color));
 }
 
+.btn-orange-solid {
+  background-color: rgb(var(--btn-orange-solid-bg));
+  color: rgb(var(--btn-orange-solid-text));
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-orange-solid:hover {
+  background-color: rgb(234, 88, 12);
+}
+
+.btn-orange-outline {
+  background-color: var(--btn-orange-outline-bg);
+  color: rgb(var(--btn-orange-outline-text));
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(var(--orange-color));
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-orange-outline:hover {
+  background-color: rgb(var(--orange-color));
+  color: rgb(var(--btn-orange-solid-text));
+}
