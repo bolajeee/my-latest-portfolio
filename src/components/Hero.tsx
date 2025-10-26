@@ -62,7 +62,7 @@ const Hero = () => {
             <Link href="#projects">
               <Button>See My Work</Button>
             </Link>
-            <a href="https://drive.google.com/file/d/1Kietx7Q18Xsa_bZg1yiAXLmE5Bhl0KvG/view?usp=sharing" download>
+            <a href="https://drive.google.com/file/d/1oVrM1SqjUSLeoEXaxzX-wVJs1jXSRv1D/view?usp=drive_link" download>
               <Button variant="outline">Download CV</Button>
             </a>
           </div>
