@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { Button } from "./Button";
 
@@ -136,7 +136,7 @@ const Contact = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-secondary max-w-3xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
+            Ready to bring your ideas to life? Let&apos;s discuss your next project and create something amazing together.
           </p>
         </motion.div>
 
@@ -151,7 +151,7 @@ const Contact = () => {
           >
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-                Let's Connect
+                Let&apos;s Connect
               </h3>
 
               {/* Contact Information */}
@@ -227,8 +227,8 @@ const Contact = () => {
                     type="text"
                     name="firstname"
                     className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 ${focusedField === 'firstname'
-                        ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                        : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                      ? 'border-orange-500 shadow-lg shadow-orange-500/20'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
                       }`}
                     placeholder="First Name"
                     value={formData.firstname}
@@ -248,8 +248,8 @@ const Contact = () => {
                     type="text"
                     name="lastname"
                     className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 ${focusedField === 'lastname'
-                        ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                        : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                      ? 'border-orange-500 shadow-lg shadow-orange-500/20'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
                       }`}
                     placeholder="Last Name"
                     value={formData.lastname}
@@ -270,8 +270,8 @@ const Contact = () => {
                   type="email"
                   name="email"
                   className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 ${focusedField === 'email'
-                      ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                    ? 'border-orange-500 shadow-lg shadow-orange-500/20'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
                     }`}
                   placeholder="Email Address"
                   value={formData.email}
@@ -291,8 +291,8 @@ const Contact = () => {
                   type="tel"
                   name="tel"
                   className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 ${focusedField === 'tel'
-                      ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                    ? 'border-orange-500 shadow-lg shadow-orange-500/20'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
                     }`}
                   placeholder="Phone Number"
                   value={formData.tel}
@@ -312,8 +312,8 @@ const Contact = () => {
                   name="message"
                   rows={5}
                   className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 resize-none ${focusedField === 'message'
-                      ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                    ? 'border-orange-500 shadow-lg shadow-orange-500/20'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
                     }`}
                   placeholder="Tell me about your project..."
                   value={formData.message}
@@ -352,7 +352,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-500/20 border border-green-500/50 rounded-xl text-green-500 text-center font-medium"
                 >
-                  ✅ Message sent successfully! I'll get back to you soon.
+                  ✅ Message sent successfully! I&apos;ll get back to you soon.
                 </motion.div>
               )}
               {submissionStatus === "error" && (

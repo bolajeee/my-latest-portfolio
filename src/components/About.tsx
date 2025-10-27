@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaCode, FaPalette, FaAward, FaExternalLinkAlt, FaChevronRight, FaUser, FaRocket, FaHeart } from "react-icons/fa";
+import { FaGraduationCap, FaCode, FaAward, FaExternalLinkAlt, FaChevronRight, FaUser, FaRocket, FaHeart } from "react-icons/fa";
 
 const aboutSections = [
   {
@@ -52,7 +52,7 @@ const aboutSections = [
     items: [
       {
         name: "Self-Taught Developer",
-        details: "Transitioned from Food Engineering to Software Development through dedication and continuous learning. I've built multiple projects showcasing my ability to learn new technologies quickly and apply them effectively. My diverse background brings unique problem-solving perspectives to development challenges.",
+        details: "Transitioned from Food Engineering to Software Development through dedication and continuous learning. I&apos;ve built multiple projects showcasing my ability to learn new technologies quickly and apply them effectively. My diverse background brings unique problem-solving perspectives to development challenges.",
         achievements: ["Career Transition Success", "Multiple Live Projects", "Continuous Learning", "Problem-Solving Mindset"],
         link: "#projects",
         isExternal: false,
@@ -124,13 +124,13 @@ const About = () => {
               <h3 className="text-xl font-bold text-foreground mb-3">My Story</h3>
               <p className="text-secondary leading-relaxed">
                 My career began in Food Engineering, where I learned how precision, process design, and system efficiency translate into real-world impact. At the University of Ilorin, I worked on developing rice–soy extruded snacks, co-led applied research on nutritional enhancement, and gained hands-on experience in industrial process optimization during my time at OK Foods.
-                <br/>
+                <br />
                 While leading teams as General Secretary and EPEX 2024 Sponsorship Lead, I discovered how systems thinking and data-driven planning could scale beyond physical production, into the digital world. That curiosity evolved into a full transition into software engineering, where I now apply the same principles of process optimization and innovation to digital systems.
-                <br/>
+                <br />
                 As a Fullstack Engineer, I’ve designed and deployed web and mobile applications that merge usability with performance. My work spans React, Node.js, Django, PostgreSQL, and MongoDB, building products that simplify operations, automate workflows, and deliver measurable business value.
-                <br/>
+                <br />
                 Across roles, from Technical Lead at Kuagi Resources to Senior Fullstack Developer at Eleaders Network, my focus has been clear: engineer scalable systems that optimize how people interact with technology.
-                <br/>
+                <br />
                 Today, I integrate both worlds, engineering precision and software innovation, to build technology that’s not only functional but intelligently designed for efficiency, sustainability, and impact.
               </p>
             </div>
@@ -171,8 +171,8 @@ const About = () => {
                     onHoverEnd={() => setHoveredCard(null)}
                     onClick={() => handleNavigation(item.link, item.isExternal)}
                     className={`group relative bg-white/5 dark:bg-black/5 rounded-2xl p-8 border transition-all duration-300 cursor-pointer ${hoveredCard === sectionIndex * 10 + itemIndex
-                        ? `${section.borderColor} shadow-2xl transform -translate-y-2`
-                        : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                      ? `${section.borderColor} shadow-2xl transform -translate-y-2`
+                      : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
                       }`}
                   >
                     {/* Clickable Indicator */}
@@ -245,11 +245,11 @@ const About = () => {
         >
           <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 rounded-2xl p-8 border border-orange-500/30">
             <h3 className="text-2xl font-bold text-foreground mb-4">
-              Let's Build Something Amazing Together
+              Let&apos;s Build Something Amazing Together
             </h3>
             <p className="text-secondary mb-6 max-w-2xl mx-auto">
-              I'm always excited to work on new projects and collaborate with fellow developers and designers.
-              Whether you have a project in mind or just want to connect, I'd love to hear from you!
+              I&apos;m always excited to work on new projects and collaborate with fellow developers and designers.
+              Whether you have a project in mind or just want to connect, I&apos;d love to hear from you!
             </p>
             <motion.button
               onClick={() => handleNavigation('#contact', false)}

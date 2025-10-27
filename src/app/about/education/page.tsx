@@ -244,7 +244,7 @@ export default function Education() {
   const [selectedCertImage, setSelectedCertImage] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentCertImages, setCurrentCertImages] = useState<string[]>([]);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
   const [activeTab, setActiveTab] = useState("education");
   const [isInView, setIsInView] = useState(false);
   const ref = useRef(null);
@@ -305,13 +305,14 @@ export default function Education() {
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -363,7 +364,7 @@ export default function Education() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
           >
-          {/*  <div className="bg-white/5 dark:bg-black/5 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+            {/*  <div className="bg-white/5 dark:bg-black/5 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
               <div className="text-2xl md:text-3xl font-bold text-orange-500 mb-1">4.2</div>
               <div className="text-sm text-secondary">GPA</div>
             </div>  */}
@@ -619,8 +620,7 @@ export default function Education() {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="bg-white/5 dark:bg-black/5 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer group"
                   onClick={() => openModal(cert.images, 0)}
-                  onMouseEnter={() => setHoveredCard(index)}
-                  onMouseLeave={() => setHoveredCard(null)}
+
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 bg-orange-500/20 rounded-full group-hover:bg-orange-500/30 transition-colors">

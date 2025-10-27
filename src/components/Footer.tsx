@@ -42,7 +42,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex justify-center space-x-6"
           >
-            {socialLinks.map((social, index) => (
+            {socialLinks.map((social) => (
               <motion.a
                 key={social.label}
                 href={social.href}

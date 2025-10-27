@@ -156,7 +156,7 @@ const SkillsCarousel = ({ activeTab }: SkillsCarouselProps) => {
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
               variants={categoryVariants}
             >
-              {category.skills.map((skill, skillIndex) => {
+              {category.skills.map((skill) => {
                 const IconComponent = iconComponents[skill.icon];
                 return (
                   <motion.div
