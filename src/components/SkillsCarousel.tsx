@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -73,39 +72,126 @@ const iconComponents: { [key: string]: React.ComponentType<any> } = {
   SiAdobephotoshop,
 };
 
-const SkillsCarousel = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+interface SkillsCarouselProps {
+  activeTab: string;
+}
+
+const SkillsCarousel = ({ activeTab }: SkillsCarouselProps) => {
+  const [filteredSkills, setFilteredSkills] = useState(skillsData);
+
+  useEffect(() => {
+    if (activeTab === "all") {
+      setFilteredSkills(skillsData);
+    } else {
+      const filtered = skillsData.filter(category =>
+        category.category.toLowerCase().includes(activeTab.toLowerCase()) ||
+        (activeTab === "tools" && category.category.toLowerCase().includes("tools"))
+      );
+      setFilteredSkills(filtered);
+    }
+  }, [activeTab]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const categoryVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.05
+      }
+    }
+  };
+
+  const skillVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
-    <div className="embla" ref={emblaRef}>
-      <div className="embla__container">
-        {skillsData.map((category, index) => (
-          <div key={index} className="embla__slide">
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-orange-500">
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={activeTab}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        className="space-y-16"
+      >
+        {filteredSkills.map((category, categoryIndex) => (
+          <motion.div
+            key={`${category.category}-${activeTab}`}
+            variants={categoryVariants}
+            className="space-y-8"
+          >
+            <motion.h3
+              className="text-2xl md:text-3xl font-bold text-orange-500"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+            >
               {category.category}
-            </h3>
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-              {category.skills.map((skill, index) => {
+            </motion.h3>
+
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+              variants={categoryVariants}
+            >
+              {category.skills.map((skill, skillIndex) => {
                 const IconComponent = iconComponents[skill.icon];
                 return (
-                  <div
-                    key={index}
-                    className="h-[100px] w-[100px] flex flex-col justify-center items-center bg-white/5 dark:bg-black/5 p-4 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105 border border-gray-200 dark:border-gray-700"
+                  <motion.div
+                    key={`${skill.name}-${activeTab}`}
+                    variants={skillVariants}
+                    whileHover={{
+                      scale: 1.1,
+                      y: -10,
+                      transition: { duration: 0.2 }
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative"
                   >
-                    <div className="flex items-center justify-center h-[60px] text-orange-500">
-                      {IconComponent && <IconComponent size={40} />}
+                    <div className="h-[120px] w-full flex flex-col justify-center items-center bg-white/5 dark:bg-black/5 p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 backdrop-blur-sm">
+                      {/* Skill Icon */}
+                      <div className="flex items-center justify-center h-[60px] text-orange-500 group-hover:text-orange-400 transition-colors duration-300">
+                        {IconComponent && <IconComponent size={40} />}
+                      </div>
+
+                      {/* Skill Name */}
+                      <p className="mt-3 text-sm md:text-base font-medium text-foreground text-center leading-tight">
+                        {skill.name}
+                      </p>
+
+                      {/* Hover Effect Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
                     </div>
-                    <p className="mt-3 text-sm md:text-base font-medium text-foreground">
-                      {skill.name}
-                    </p>
-                  </div>
+                  </motion.div>
                 );
               })}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

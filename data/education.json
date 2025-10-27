@@ -1,0 +1,158 @@
+{
+  "education": {
+    "degree": "Bachelor of Engineering (B.Eng) in Food Engineering",
+    "university": "University of Ilorin",
+    "location": "Ilorin, Kwara State, Nigeria",
+    "duration": "2018 - 2024",
+    "grade": "Second Class Upper Honors",
+   
+    "description": "Comprehensive engineering program focusing on food processing, quality control, and safety management. Developed strong analytical and problem-solving skills through rigorous coursework and practical laboratory experience.",
+    "keySubjects": [
+      "Food Process Engineering",
+      "Quality Control & Assurance", 
+      "Food Safety & HACCP",
+      "Thermodynamics",
+      "Unit Operations",
+      "Food Chemistry",
+      "Microbiology",
+      "Project Management",
+      "Statistics & Data Analysis",
+      "Engineering Mathematics",
+      "Fluid Mechanics",
+      "Heat & Mass Transfer"
+    ],
+    "achievements": [
+      "Graduated with Second Class Upper Honors ",
+      "Completed final year project on innovative food preservation techniques",
+      "Active member of student engineering society and leadership roles",
+      "Participated in multiple engineering conferences and workshops",
+      "Received academic excellence recognition in multiple semesters",
+      "Contributed to research publications in food engineering"
+    ],
+    "projects": [
+      {
+        "title": "Development of 3G rice-soy snack",
+        "description": "Developed a 3rd generation rice-soy snack",
+        "technologies": ["Product Design", "Process Control"],
+        "year": "2024"
+      },
+    ]
+  },
+  "certifications": [
+    {
+      "title": "Exceptional Leadership Award",
+      "description": "Recognized for outstanding leadership qualities and contribution to student community development. This award acknowledges exceptional ability to inspire, guide, and motivate fellow students while maintaining academic excellence.",
+      "issuer": "University of Ilorin",
+      "year": "2023",
+      "category": "Leadership",
+      "skills": ["Leadership", "Team Management", "Community Development", "Public Speaking"],
+      "images": ["/assets/awards/exceptional-leadership.jpg"]
+    },
+    {
+      "title": "Health, Safety & Environment (HSE) Certification",
+      "description": "Comprehensive certification covering workplace safety, environmental protection, and health management across three progressive levels. Includes risk assessment, safety protocols, environmental compliance, and emergency response procedures.",
+      "issuer": "Professional Safety Institute",
+      "year": "2023",
+      "category": "Safety & Environment",
+      "skills": ["Risk Assessment", "Safety Management", "Environmental Compliance", "Emergency Response"],
+      "images": [
+        "/assets/awards/HSE1.png",
+        "/assets/awards/HSE2.png", 
+        "/assets/awards/HSE3.png"
+      ]
+    },
+    {
+      "title": "Most Reputable Student Award",
+      "description": "Awarded for maintaining exceptional academic performance and exemplary conduct throughout university career. Selected from thousands of students nationwide for outstanding character, academic achievement, and positive impact on the university community.",
+      "issuer": "Nigerian University Engineering Students Association",
+      "year": "2024",
+      "category": "Academic Excellence",
+      "skills": ["Academic Excellence", "Character Development", "Peer Leadership", "Community Impact"],
+      "images": ["/assets/awards/most-reputable.jpg"]
+    }
+  ],
+  "memberships": [
+    {
+      "title": "Graduate Member, Nigerian Society of Engineers (GMNSE)",
+      "description": "Professional membership in Nigeria's premier engineering organization, providing access to continuous professional development, networking opportunities, and industry best practices.",
+      "role": "Graduate Member",
+      "year": "2024 - Present",
+      "icon": "FaUniversity",
+      "benefits": ["Professional Development", "Industry Networking", "Technical Resources", "Career Advancement"]
+    },
+    {
+      "title": "General Secretary - NAFES",
+      "description": "National Association Of Food Engineering Students leadership position, responsible for coordinating national activities, managing communications, and representing student interests at the national level.",
+      "role": "General Secretary",
+      "year": "2022 - 2024",
+      "icon": "FaUsers",
+      "responsibilities": ["National Coordination", "Strategic Planning", "Student Advocacy", "Event Management"]
+    },
+    {
+      "title": "NAKSS Tech Summit Co-organizer",
+      "description": "Organized technology summit promoting STEM education and innovation, bringing together students, professionals, and industry leaders to discuss emerging technologies and career opportunities.",
+      "role": "Co-organizer",
+      "year": "2023",
+      "icon": "FaAward",
+      "impact": ["STEM Promotion", "Industry Collaboration", "Student Engagement", "Innovation Advocacy"]
+    },
+    {
+      "title": "60 Most Reputable NUSEites",
+      "description": "Selected among the 60 most reputable students in NUESA nationwide, recognizing outstanding academic performance, leadership qualities, and positive contribution to the engineering student community.",
+      "role": "Honoree",
+      "year": "2024",
+      "icon": "FaMedal",
+      "recognition": ["National Recognition", "Academic Excellence", "Leadership Impact", "Peer Respect"]
+    }
+  ],
+  "achievements": [
+    {
+      "year": "2024",
+      "title": "Most Reputable Student Award",
+      "description": "Selected among the 60 most reputable students nationwide for exceptional academic performance and character",
+      "icon": "FaTrophy",
+      "color": "from-yellow-500 to-orange-500",
+      "impact": "National recognition for academic and character excellence"
+    },
+    {
+      "year": "2024",
+      "title": "Engineering Graduation with Honors",
+      "description": "Completed Bachelor of Engineering degree with Second Class Upper Honors (4.2/5.0 GPA)",
+      "icon": "FaGraduationCap",
+      "color": "from-blue-500 to-purple-500",
+      "impact": "Academic excellence in rigorous engineering program"
+    },
+    {
+      "year": "2023",
+      "title": "Exceptional Leadership Award",
+      "description": "Recognized for outstanding leadership in student community development and peer mentorship",
+      "icon": "FaHandshake",
+      "color": "from-orange-500 to-red-500",
+      "impact": "Positive influence on student community and leadership development"
+    },
+    {
+      "year": "2023",
+      "title": "HSE Professional Certification",
+      "description": "Completed comprehensive Health, Safety & Environment training across three progressive levels",
+      "icon": "FaLightbulb",
+      "color": "from-green-500 to-blue-500",
+      "impact": "Enhanced workplace safety and environmental management expertise"
+    },
+    {
+      "year": "2022-2024",
+      "title": "NAFES General Secretary",
+      "description": "Led national association of food engineering students, coordinating activities and representing student interests",
+      "icon": "FaUsers",
+      "color": "from-blue-500 to-purple-500",
+      "impact": "National leadership role affecting thousands of engineering students"
+    },
+    {
+      "year": "2023",
+      "title": "Tech Summit Co-organizer",
+      "description": "Successfully organized NAKSS Tech Summit promoting STEM education and innovation",
+      "icon": "FaRocket",
+      "color": "from-purple-500 to-pink-500",
+      "impact": "Promoted STEM education and connected students with industry professionals"
+    }
+  ]
+}

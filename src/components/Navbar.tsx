@@ -1,115 +1,142 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-// import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { usePathname } from "next/navigation";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
 import { useTheme } from "next-themes";
-import { Button } from "./Button";
-// import { motion } from "framer-motion";
+
 
 const navLinks = [
   { title: "Home", path: "/" },
-  { title: "About", path: "#about" },
-  { title: "Portfolio", path: "#projects" },
-  { title: "Contact", path: "#contact" },
+  { title: "About", path: "/#about" },
+  { title: "Portfolio", path: "/#projects" },
+  { title: "Contact", path: "/#contact" },
 ];
 
 const Navbar = () => {
-  // const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
 
-  // const toggleNav = () => {
-  //   setNav(!nav);
-  //   if (!nav) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "auto";
-  //   }
-  // };
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleNav = () => {
+    setNav(!nav);
+    if (!nav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  };
+
+  const closeNav = () => {
+    setNav(false);
+    document.body.style.overflow = "auto";
+  };
+
+  const handleNavigation = (path: string) => {
+    closeNav();
+
+    // If we're on the homepage and it's a hash link, scroll to section
+    if (pathname === "/" && path.startsWith("/#")) {
+      const sectionId = path.substring(2); // Remove "/#"
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      return;
+    }
+
+    // For other cases, navigate normally
+    window.location.href = path;
+  };
 
   return (
-    <div
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-background/80 backdrop-blur-sm border-b border-secondary/20`}
-    >
-      <div className="hidden md:flex items-center px-4 py-2 mx-auto max-w-[400px]">
-        <ul className="flex flex-row p-2 space-x-8 mx-auto">
-          {navLinks.map((link, index) => (
-            <li key={index} className="relative group ">
-              <Link href={link.path}>
-                <p className="text-foreground hover:text-orange-500 transition duration-300">
-                  {link.title}
-                </p>
-              </Link>
-              <div className="relative">
-                <div className="absolute w-full h-1 transition-all duration-300 ease-out bg-orange-500 rounded-full scale-x-0 group-hover:scale-x-100"></div>
-              </div>
-            </li>
-          ))}
-        </ul>
-        {/* Theme Toggle Buttons for Desktop */}
-        <div className="flex items-center space-x-2">
-          {mounted && (
-            <Button
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              aria-label="Toggle theme"
-              variant="ghost"
-              size="sm"
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+      ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-lg'
+      : 'bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800'
+      }`}>
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="text-lg font-bold text-gray-900 dark:text-white hover:text-orange-500 transition-colors">
+            Portfolio
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link, index) => (
+              <button
+                key={index}
+                onClick={() => handleNavigation(link.path)}
+                className="text-sm text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors font-medium"
+              >
+                {link.title}
+              </button>
+            ))}
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                className="p-2 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                {theme === "light" ? <BsMoonFill size={16} /> : <BsSunFill size={16} />}
+              </button>
+            )}
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center space-x-2">
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                className="p-2 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                {theme === "light" ? <BsMoonFill size={16} /> : <BsSunFill size={16} />}
+              </button>
+            )}
+            <button
+              onClick={toggleNav}
+              className="p-2 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
             >
-              {theme === "light" ? <BsMoonFill size={20} /> : <BsSunFill size={20} />}
-            </Button>
-          )}
+              {nav ? <AiOutlineClose size={18} /> : <AiOutlineMenu size={18} />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu Button */}
-      {/* <div
-        onClick={toggleNav}
-        className="md:hidden absolute top-5 right-5 border rounded border-foreground/70 p-2 z-50 text-foreground"
-      >
-        {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
-      </div> */}
-
-      {/* Mobile Dropdown Menu */}
-      {/* <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: nav ? "0%" : "100%" }}
-        transition={{ type: "tween", duration: 0.3 }}
-        className={`fixed top-0 right-0 h-full w-full !bg-background/95 backdrop-blur-sm z-40 md:hidden`}
-      >
-        <div className="flex flex-col items-center justify-center h-full">
-          <ul className="text-4xl font-semibold space-y-8 text-foreground">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={link.path}
-                  onClick={toggleNav}
-                  className="hover:text-orange-500 transition duration-300"
+      {/* Mobile Navigation Menu */}
+      {nav && (
+        <>
+          <div className="fixed inset-0 bg-black/20 z-40 md:hidden" onClick={closeNav} />
+          <div className="fixed top-16 right-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl z-50 md:hidden min-w-[160px]">
+            <div className="py-2">
+              {navLinks.map((link, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleNavigation(link.path)}
+                  className="block w-full text-left px-4 py-3 text-sm text-gray-600 dark:text-gray-300 hover:text-orange-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors font-medium"
                 >
                   {link.title}
-                </Link>
-              </li>
-            ))}
-          </ul> */}
-
-          {/* Theme Toggle Buttons for Mobile */}
-          {/* <div className="flex items-center space-x-4 mt-8">
-            {mounted && (
-              <Button
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                aria-label="Toggle theme"
-                variant="ghost"
-                size="sm"
-              >
-                {theme === "light" ? <BsMoonFill size={20} /> : <BsSunFill size={20} />}
-              </Button>
-            )}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </motion.div> */}
-    </div>
+        </>
+      )}
+    </nav>
   );
 };
 

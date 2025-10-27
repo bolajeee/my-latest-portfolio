@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./Button";
+import { FaGithub, FaExternalLinkAlt, FaCode, FaRocket } from "react-icons/fa";
 
 // Define the Project interface
 interface Project {
@@ -25,8 +26,6 @@ interface ProjectCardProps {
   index: number;
 }
 
-// Removed direct image imports (proj1, proj2, etc.)
-
 import projectsData from "../../data/projects.json"; // Import projects data
 
 const projects: Project[] = projectsData.map(project => ({
@@ -37,22 +36,40 @@ const projects: Project[] = projectsData.map(project => ({
 const Portfolio = () => {
   return (
     <div
-      className="bg-background text-foreground py-32" // Use theme variables
+      className="bg-background text-foreground py-32 relative overflow-hidden"
       id="projects"
     >
-      {/* Header */}
-      <h1 className="text-4xl md:text-6xl font-bold text-center mb-32">
-        My
-        <span className="text-orange-500 px-4 underline decoration-orange-500 decoration-4">
-          Projects
-        </span>
-      </h1>
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-500/5" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
 
-      {/* Project Cards */}
-      <div className="px-6 md:px-0 max-w-[1200px] mx-auto space-y-16">
-        {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
-        ))}
+      <div className="relative z-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Featured
+            <span className="text-orange-500 px-4 underline decoration-orange-500 decoration-4">
+              Projects
+            </span>
+          </h1>
+          <p className="text-lg md:text-xl text-secondary max-w-3xl mx-auto px-6">
+            A showcase of my recent work, featuring full-stack applications, APIs, and modern web solutions
+          </p>
+        </motion.div>
+
+        {/* Project Cards */}
+        <div className="px-6 md:px-0 max-w-[1400px] mx-auto space-y-32">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -62,6 +79,7 @@ const Portfolio = () => {
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const ref = useRef(null);
   const [isInView, setIsInView] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,9 +103,40 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     };
   }, []);
 
-  const variants = {
-    hidden: { opacity: 0, x: index % 2 === 0 ? -100 : 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      x: index % 2 === 0 ? -100 : 100,
+      y: 50
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2
+      }
+    },
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
   };
 
   return (
@@ -95,71 +144,167 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      variants={variants}
-      className={`flex flex-col ${
-        index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
-      } items-center justify-between gap-8 md:gap-16`}
+      variants={cardVariants}
+      className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+        } items-center justify-between gap-12 lg:gap-20`}
     >
       {/* Text Content */}
-      <div className="space-y-4 max-w-lg text-center md:text-left">
-        <h2 className="text-6xl font-bold text-orange-500">
-          {`0${index + 1}`}
-        </h2>
-        <h3 className="text-3xl font-semibold text-foreground">{project.title}</h3>
-        <p className="text-base md:text-lg text-secondary">{project.description}</p>
+      <motion.div
+        variants={contentVariants}
+        className="flex-1 space-y-6 text-center lg:text-left max-w-2xl"
+      >
+        {/* Project Number */}
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={isInView ? { scale: 1 } : { scale: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="inline-block"
+        >
+          <span className="text-7xl md:text-8xl font-bold text-orange-500/20 leading-none">
+            {`0${index + 1}`}
+          </span>
+        </motion.div>
 
-        <div> {/* Wrapper for Tech Stack */}
-          <h4 className="text-xl font-semibold text-foreground block mt-4">Tech Stack:</h4>
-          <div className="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+        {/* Project Title */}
+        <motion.h3
+          variants={contentVariants}
+          className="text-3xl md:text-4xl font-bold text-foreground"
+        >
+          {project.title}
+        </motion.h3>
+
+        {/* Project Description */}
+        <motion.p
+          variants={contentVariants}
+          className="text-base md:text-lg text-secondary leading-relaxed"
+        >
+          {project.description}
+        </motion.p>
+
+        {/* Tech Stack */}
+        <motion.div variants={contentVariants} className="space-y-3">
+          <div className="flex items-center gap-2 justify-center lg:justify-start">
+            <FaCode className="text-orange-500" />
+            <h4 className="text-lg font-semibold text-foreground">Tech Stack</h4>
+          </div>
+          <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
             {project.techStack.map((tech, idx) => (
-              <span
+              <motion.span
                 key={idx}
-                className="px-3 py-1 bg-orange-500/20 text-orange-500 text-sm rounded-full"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3, delay: 0.5 + idx * 0.1 }}
+                className="px-4 py-2 bg-gradient-to-r from-orange-500/20 to-orange-600/20 text-orange-500 text-sm font-medium rounded-full border border-orange-500/30 hover:border-orange-500/50 transition-colors"
               >
                 {tech}
-              </span>
+              </motion.span>
             ))}
           </div>
-        </div>
+        </motion.div>
 
+        {/* Key Features */}
         {project.keyFeatures && project.keyFeatures.length > 0 && (
-          <div> {/* Wrapper for Key Features */}
-            <h4 className="text-xl font-semibold text-foreground block mt-4">Key Features:</h4>
-            <div className="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+          <motion.div variants={contentVariants} className="space-y-3">
+            <div className="flex items-center gap-2 justify-center lg:justify-start">
+              <FaRocket className="text-orange-500" />
+              <h4 className="text-lg font-semibold text-foreground">Key Features</h4>
+            </div>
+            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
               {project.keyFeatures.map((feature, idx) => (
-                <span
+                <motion.span
                   key={idx}
-                  className="px-3 py-1 bg-orange-500/20 text-orange-500 text-sm rounded-full"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.3, delay: 0.7 + idx * 0.1 }}
+                  className="px-4 py-2 bg-white/5 dark:bg-black/5 text-foreground text-sm font-medium rounded-full border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-colors"
                 >
                   {feature}
-                </span>
+                </motion.span>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
 
-        <div className="flex justify-center md:justify-start gap-6 mt-4">
-          <a href={project.liveLink}>
-            <Button>Live Demo</Button>
-          </a>
-          <a href={project.githubLink}>
-            <Button variant="outline">GitHub</Button>
-          </a>
-        </div>
-      </div>
+        {/* Action Buttons */}
+        <motion.div
+          variants={contentVariants}
+          className="flex justify-center lg:justify-start gap-4 pt-4"
+        >
+          <motion.a
+            href={project.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group"
+          >
+            <Button className="flex items-center gap-2">
+              <FaExternalLinkAlt className="group-hover:rotate-12 transition-transform" />
+              Live Demo
+            </Button>
+          </motion.a>
+          <motion.a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group"
+          >
+            <Button variant="outline" className="flex items-center gap-2">
+              <FaGithub className="group-hover:rotate-12 transition-transform" />
+              GitHub
+            </Button>
+          </motion.a>
+        </motion.div>
+      </motion.div>
 
-      {/* Image */}
-      <div
-        className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition"
+      {/* Project Image */}
+      <motion.div
+        variants={imageVariants}
+        className="flex-1 max-w-2xl"
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
       >
-        <Image
-          src={project.src}
-          alt={project.title}
-          width={project.width}
-          height={project.height}
-          className="h-[300px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[550px] object-cover"
-        />
-      </div>
+        <motion.div
+          className="relative group overflow-hidden rounded-2xl shadow-2xl"
+          whileHover={{ y: -10 }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* Image Container */}
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/10 to-orange-600/10">
+            <Image
+              src={project.src}
+              alt={project.title}
+              width={project.width}
+              height={project.height}
+              className="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            {/* Hover Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
+              transition={{ duration: 0.3 }}
+              className="absolute bottom-6 left-6 right-6"
+            >
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+                <h4 className="text-white font-semibold text-lg mb-2">{project.title}</h4>
+                <p className="text-white/80 text-sm line-clamp-2">
+                  {project.description.substring(0, 100)}...
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange-500/20 rounded-full blur-xl group-hover:bg-orange-500/30 transition-colors duration-300" />
+          <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange-500/10 rounded-full blur-xl group-hover:bg-orange-500/20 transition-colors duration-300" />
+        </motion.div>
+      </motion.div>
     </motion.div>
   );
 };

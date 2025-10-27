@@ -1,79 +1,145 @@
 "use client";
-import React from "react";
-import useEmblaCarousel from 'embla-carousel-react'
+import React, { useState, useEffect } from "react";
 import Link from 'next/link';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 interface Certification {
   name: string;
   details: string;
   link: string;
+  provider: string;
 }
 
 const certifications: Certification[] = [
   {
     name: "Backend Web Development (Python)",
-    details: "ALX-certified in Backend Web Development with proficiency in Python, Flask, and RESTful API architecture. Skilled in database modeling using PostgreSQL and MongoDB, authentication systems, and server-side logic optimization for scalable web applications.",
+    details: "Backend development with Python, Flask, RESTful APIs, PostgreSQL, and MongoDB.",
     link: "https://drive.google.com/file/d/1rKMRAT1rfhd644Ss1OWFBJK5YIZ-aht5/view?usp=sharing",
+    provider: "ALX",
   },
   {
-    name: "ALX Virtual Assistance",
-    details: "ALX-certified in Virtual Assistance with expertise in remote team coordination, document management, and workflow automation using Google Workspace, Notion, and CRM tools. Adept in professional correspondence, meeting scheduling, and client relationship management.",
+    name: "Virtual Assistance",
+    details: "Remote team coordination, document management, and workflow automation.",
     link: "https://www.virtualbadge.io/certificate-validator?credential=cer-71832355-815a-462c-891c-406757e5",
+    provider: "ALX",
   },
   {
     name: "AI Starter Kit",
-    details: "ALX-certified in Artificial Intelligence Fundamentals, with a foundation in machine learning workflows, supervised and unsupervised learning, data preprocessing, and model evaluation. Familiar with Python libraries such as scikit-learn, NumPy, and pandas for AI experimentation.",
+    details: "Machine learning fundamentals, data preprocessing, and model evaluation.",
     link: "https://drive.google.com/file/d/1BKyXRIcrAw9fa864N1aMtMd0mLwianKi/view?usp=drive_link",
+    provider: "ALX",
   },
   {
     name: "Professional Foundation",
-    details: "ALX Professional Foundation certification demonstrating excellence in communication, collaboration, agile teamwork, and critical problem-solving. Experienced in professional ethics, adaptability, and remote work efficiency across cross-functional teams.",
+    details: "Communication, collaboration, and critical problem-solving skills.",
     link: "https://drive.google.com/file/d/15qgVsRBC9-44U9vYyMpQ0gymJAMD376n/view?usp=drive_link",
+    provider: "ALX",
   },
   {
     name: "Backend Development",
-    details: "Advanced ALX certification in Backend Development, focused on designing and deploying production-ready APIs. Proficient in Flask, Django, and Express.js with skills in database integration, token-based authentication (JWT), and cloud deployment via AWS and Render.",
+    details: "Production-ready APIs with Flask, Django, JWT authentication, and cloud deployment.",
     link: "https://drive.google.com/file/d/1lCuJ0dj_-sakKXo8c4Q16RdHDG27x69w/view?usp=drive_link",
+    provider: "ALX",
   },
   {
     name: "Food Product Development",
-    details: "Nestlé-certified in Food Product Development, experienced in prototype formulation, sensory evaluation, and quality assurance. Skilled in product ideation, market analysis, food safety compliance (HACCP), and cross-functional project execution for innovation pipelines.",
+    details: "Prototype formulation, sensory evaluation, and quality assurance.",
     link: "https://drive.google.com/file/d/1YeMisDMmI3pSnOpojtW4E2K-JpE6wZgZ/view?usp=drive_link",
+    provider: "Nestlé",
   },
   {
     name: "Project Management",
-    details: "Nestlé-certified in Project Management with strong command of planning, scheduling, and execution using tools such as Trello, Asana, and Gantt charts. Skilled in stakeholder communication, risk analysis, and resource optimization through Agile and Waterfall methodologies.",
+    details: "Planning, scheduling, and execution using Agile and Waterfall methodologies.",
     link: "https://drive.google.com/file/d/1crwc640ZXOXcwmee6kIroJIfD6Po3uqN/view?usp=drive_link",
+    provider: "Nestlé",
   },
   {
     name: "Consumer Understanding",
-    details: "Nestlé-certified in Consumer Understanding, with expertise in market segmentation, survey design, sensory testing, and behavioral analytics. Adept at translating consumer insights into data-driven product innovation and brand positioning strategies.",
+    details: "Market segmentation, survey design, and behavioral analytics.",
     link: "https://drive.google.com/file/d/1TGOPsp1nDHFTWgUFz9OM4lwAQU5ZiRsA/view?usp=drive_link",
+    provider: "Nestlé",
   },
   {
     name: "Design of Experiments (DoE)",
-    details: "Nestlé-certified in Design of Experiments, proficient in factorial and response surface methodologies for process optimization. Skilled in Minitab and Excel for statistical analysis, variance interpretation, and data-driven decision-making in product and process design.",
+    details: "Statistical analysis and process optimization using Minitab and Excel.",
     link: "https://drive.google.com/file/d/1osuWyo0nX0Gk4SaGocWPhCroJaql7EhU/view?usp=drive_link",
+    provider: "Nestlé",
   },
 ];
 
-import Autoplay from 'embla-carousel-autoplay'
+const CertificationsCarousel = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'start',
+      slidesToScroll: 1,
+      breakpoints: {
+        '(min-width: 768px)': { slidesToScroll: 2 }
+      }
+    },
+    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+  );
 
-const CertificationsCarousel = ({ certifications }: { certifications: Certification[] }) => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on('select', () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    });
+  }, [emblaApi]);
+
+  const scrollTo = (index: number) => emblaApi && emblaApi.scrollTo(index);
 
   return (
-    <div className="overflow-hidden" ref={emblaRef}>
-      <div className="flex">
-        {certifications.map((item: Certification, i: number) => (
-          <div key={i} className="flex-[0_0_100%] md:flex-[0_0_33.333%] p-4">
-            <Link href={item.link} target="_blank" rel="noopener noreferrer">
-              <div className="p-6 rounded-lg shadow bg-white/5 border border-secondary/50 hover:bg-orange-500/10 transition-colors duration-300">
-                <h3 className="text-xl font-semibold text-orange-500">{item.name}</h3>
-                <p className="text-secondary mt-2 hidden md:block">{item.details}</p>
-              </div>
-            </Link>
-          </div>
+    <div className="relative">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {certifications.map((cert, index) => (
+            <div key={index} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4">
+              <Link
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <div className="bg-foreground/5 hover:bg-foreground/10 border border-foreground/10 hover:border-orange-500/30 rounded-lg p-6 h-full transition-all duration-300 group">
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-xs font-medium text-orange-500 bg-orange-500/10 px-2 py-1 rounded">
+                      {cert.provider}
+                    </span>
+                    <svg className="w-4 h-4 text-foreground/40 group-hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                  <h3 className="font-medium text-foreground group-hover:text-orange-500 transition-colors mb-2 break-words">
+                    {cert.name}
+                  </h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed break-words">
+                    {cert.details}
+                  </p>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dots indicator */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {scrollSnaps.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollTo(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === selectedIndex
+                ? 'bg-orange-500 w-6'
+                : 'bg-foreground/20 hover:bg-foreground/40'
+              }`}
+          />
         ))}
       </div>
     </div>
@@ -83,15 +149,20 @@ const CertificationsCarousel = ({ certifications }: { certifications: Certificat
 const Certifications = () => {
   return (
     <div
-      className="mx-auto px-4 py-20 bg-background text-foreground"
+      className="mx-auto px-4 py-16 bg-background text-foreground overflow-x-hidden"
       id="certifications"
     >
-      <h1 className="text-4xl md:text-6xl font-bold text-center mb-16">
-        My <span className="text-orange-500">Certifications</span>
-      </h1>
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="mb-12 text-center">
+          <h1 className="text-3xl font-light mb-4 text-foreground">
+            Certifications
+          </h1>
+          <p className="text-foreground/60 text-sm">
+            Professional certifications and training programs
+          </p>
+        </div>
 
-      <div className="max-w-[900px] mx-auto">
-        <CertificationsCarousel certifications={certifications} />
+        <CertificationsCarousel />
       </div>
     </div>
   );
