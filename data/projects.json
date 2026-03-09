@@ -1,13 +1,13 @@
 [
   {
     "id": "1",
-    "title": "Smile Ecommerce Site",
+    "title": "Temperature's Couture",
     "description": "A sleek, full-featured e-commerce platform built with Next.js, TypeScript, and Prisma. Smile Fashion Brand delivers a modern shopping experience with dark mode, real-time cart updates, and a responsive, mobile-first UI. Featuring secure authentication via NextAuth.js, advanced product filtering, and an intuitive admin dashboard for product and order management, it embodies both technical precision and design elegance.",
-    "techStack": ["Next.js 13+", "TypeScript", "Prisma", "PostgreSQL", "NextAuth.js"],
+    "techStack": ["Next.js 13+", "TypeScript", "Node", "MongoDb with Mongoose", "JWT Authentication"],
     "keyFeatures": ["Dark mode", "Cart & checkout flow", "Role-based admin panel", "RESTful API", "Animated UI components"],
     "image": "/assets/proj1.png",
-    "liveLink": "https://smile-fashion.vercel.app/",
-    "githubLink": "https://github.com/bolajeee/Smile_fashion_brand",
+    "liveLink": "https://munis-world.vercel.app/",
+    "githubLink": "https://github.com/bolajeee/munis_world",
     "width": 800,
     "height": 600
   },
