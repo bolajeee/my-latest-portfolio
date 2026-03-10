@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Button } from "./Button";
 import { FaGithub, FaExternalLinkAlt, FaCode, FaRocket } from "react-icons/fa";
 
@@ -120,7 +120,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         staggerChildren: 0.2
       }
     },
-  };
+  } satisfies Variants;
 
   const contentVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -129,7 +129,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" }
     }
-  };
+  } satisfies Variants;
 
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -138,7 +138,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       scale: 1,
       transition: { duration: 0.8, ease: "easeOut" }
     }
-  };
+  } satisfies Variants;
 
   return (
     <motion.div

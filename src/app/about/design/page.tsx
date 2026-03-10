@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useState } from "react";
 
 // Define the Design interface
@@ -100,7 +100,7 @@ export default function DesignPortfolio() {
         delayChildren: 0.3,
       },
     },
-  };
+  } satisfies Variants;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.9 },
@@ -114,7 +114,7 @@ export default function DesignPortfolio() {
         damping: 12,
       },
     },
-  };
+  } satisfies Variants;
 
   const headerVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -128,7 +128,7 @@ export default function DesignPortfolio() {
         duration: 0.8,
       },
     },
-  };
+  } satisfies Variants;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 text-foreground">

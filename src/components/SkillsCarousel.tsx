@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -14,6 +14,7 @@ import {
   FaGithub,
   FaFigma,
 } from "react-icons/fa";
+import { TbBrandAdobePhotoshop } from "react-icons/tb";
 import {
   SiGooglesheets,
   SiTypescript,
@@ -34,7 +35,6 @@ import {
   SiFastapi,
   SiVercel,
   SiCanva,
-  SiAdobephotoshop,
 } from "react-icons/si";
 import skillsData from "../../data/skills.json";
 
@@ -69,7 +69,7 @@ const iconComponents: { [key: string]: React.ComponentType<any> } = {
   SiFastapi,
   SiVercel,
   SiCanva,
-  SiAdobephotoshop,
+  TbBrandAdobePhotoshop,
 };
 
 interface SkillsCarouselProps {
@@ -100,7 +100,7 @@ const SkillsCarousel = ({ activeTab }: SkillsCarouselProps) => {
         delayChildren: 0.2
       }
     }
-  };
+  } satisfies Variants;
 
   const categoryVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -112,7 +112,7 @@ const SkillsCarousel = ({ activeTab }: SkillsCarouselProps) => {
         staggerChildren: 0.05
       }
     }
-  };
+  } satisfies Variants;
 
   const skillVariants = {
     hidden: { opacity: 0, scale: 0.8, y: 20 },
@@ -125,7 +125,7 @@ const SkillsCarousel = ({ activeTab }: SkillsCarouselProps) => {
         ease: "easeOut"
       }
     }
-  };
+  } satisfies Variants;
 
   return (
     <AnimatePresence mode="wait">

@@ -4,7 +4,7 @@ import Link from "next/link";
 import profilepic from "../assets/profilepic.jpg";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Button } from "./Button";
 
 const Hero = () => {
@@ -28,12 +28,12 @@ const Hero = () => {
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
+  } satisfies Variants;
 
   const imageVariants = {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
-  };
+  } satisfies Variants;
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-orange-50/20 dark:to-orange-950/20">
