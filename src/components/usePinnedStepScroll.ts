@@ -30,6 +30,7 @@ export const usePinnedStepScroll = (
   const [activeIndex, setActiveIndex] = useState(0);
   const deltaAccumulatorRef = useRef(0);
   const cooldownRef = useRef<number | null>(null);
+  const touchStartXRef = useRef<number | null>(null);
   const touchStartYRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -56,6 +57,7 @@ export const usePinnedStepScroll = (
     const step = (direction: 1 | -1) => {
       setActiveIndex((current) => clampIndex(current + direction, itemCount));
       deltaAccumulatorRef.current = 0;
+      touchStartXRef.current = null;
       touchStartYRef.current = null;
       clearCooldown();
       cooldownRef.current = window.setTimeout(() => {
@@ -111,6 +113,7 @@ export const usePinnedStepScroll = (
         return;
       }
 
+      touchStartXRef.current = event.touches[0]?.clientX ?? null;
       touchStartYRef.current = event.touches[0]?.clientY ?? null;
     };
 
@@ -124,28 +127,43 @@ export const usePinnedStepScroll = (
       }
 
       if (!inPinnedZone()) {
+        touchStartXRef.current = null;
         touchStartYRef.current = null;
         return;
       }
 
+      const startX = touchStartXRef.current;
       const startY = touchStartYRef.current;
+      const currentX = event.touches[0]?.clientX;
       const currentY = event.touches[0]?.clientY;
-      if (startY === null || currentY === undefined) {
+      if (
+        startX === null ||
+        startY === null ||
+        currentX === undefined ||
+        currentY === undefined
+      ) {
         return;
       }
 
+      const deltaX = startX - currentX;
       const deltaY = startY - currentY;
-      if (deltaY === 0) {
+      if (deltaX === 0 && deltaY === 0) {
         return;
       }
 
-      const direction = Math.sign(deltaY);
+      const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+      if (!isHorizontalSwipe || Math.abs(deltaX) < TOUCH_THRESHOLD) {
+        return;
+      }
+
+      const direction = Math.sign(deltaX);
       const atFirst = activeIndex === 0;
       const atLast = activeIndex === itemCount - 1;
       const leavingUp = direction < 0 && atFirst;
       const leavingDown = direction > 0 && atLast;
 
       if (leavingUp || leavingDown) {
+        touchStartXRef.current = currentX;
         touchStartYRef.current = currentY;
         return;
       }
@@ -156,14 +174,11 @@ export const usePinnedStepScroll = (
         return;
       }
 
-      if (Math.abs(deltaY) < TOUCH_THRESHOLD) {
-        return;
-      }
-
       step(direction > 0 ? 1 : -1);
     };
 
     const handleTouchEnd = () => {
+      touchStartXRef.current = null;
       touchStartYRef.current = null;
     };
 

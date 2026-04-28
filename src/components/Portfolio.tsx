@@ -35,14 +35,11 @@ const projects: Project[] = projectsData.map((project) => ({
 const Portfolio = () => {
   const mobileCardRef = useRef<HTMLDivElement | null>(null);
   const [mobileCardHeight, setMobileCardHeight] = useState(0);
-  const mobileStepDistance =
-    mobileCardHeight > 0 ? Math.max(140, Math.round(mobileCardHeight * 0.32)) : 180;
   const { activeIndex, progressPercent, sectionRef } = usePinnedStepScroll(
     projects.length,
     {
       enableTouchOnMobile: true,
-      mobileScrollProgress: true,
-      mobileStepDistance,
+      mobileScrollProgress: false,
     }
   );
   const activeProject = projects[activeIndex];
@@ -71,9 +68,7 @@ const Portfolio = () => {
   }, [activeIndex]);
 
   const mobileProjectTrackHeight =
-    mobileCardHeight > 0
-      ? `${mobileCardHeight + (projects.length - 1) * mobileStepDistance}px`
-      : undefined;
+    mobileCardHeight > 0 ? `${mobileCardHeight + 40}px` : undefined;
 
   return (
     <section
@@ -398,7 +393,7 @@ const Portfolio = () => {
                     <div className="flex items-center justify-between gap-3 text-xs text-secondary">
                       <span className="inline-flex items-center gap-2">
                         <FaArrowDown className="text-blue-900 dark:text-blue-200" />
-                        Scroll to explore
+                        Swipe to explore
                       </span>
                       <span>{activeIndex + 1} of {projects.length}</span>
                     </div>
