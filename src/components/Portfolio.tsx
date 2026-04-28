@@ -77,15 +77,15 @@ const Portfolio = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate bg-background pt-16 pb-4 md:py-32 lg:py-20"
+      className="relative isolate bg-background pt-16 pb-4 md:py-32 lg:pt-4 lg:pb-64"
       id="projects"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 via-transparent to-blue-900/5 dark:from-slate-100/5 dark:to-blue-200/5" />
       <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-slate-900/10 blur-3xl dark:bg-blue-200/10" />
       <div className="absolute right-10 h-96 w-96 rounded-full bg-blue-900/5 blur-3xl dark:bg-slate-200/5" />
 
-      <div className="hidden min-h-screen px-6 lg:block">
-        <div className="sticky top-[10vh] mx-auto grid h-[80vh] w-full max-w-330 grid-cols-[340px_minmax(0,1fr)] gap-8">
+      <div className="hidden min-h-screen items-center px-6 lg:flex">
+        <div className="mx-auto grid h-[80vh] w-full max-w-[1320px] grid-cols-[340px_minmax(0,1fr)] gap-8">
             <div className="flex h-full flex-col rounded-[2rem] border border-gray-200/80 bg-white/75 p-7 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-gray-700/80 dark:bg-black/20">
               <div className="space-y-5">
                 <div className="inline-flex items-center gap-3 rounded-full border border-slate-900/10 bg-slate-100/85 px-4 py-2 text-sm font-semibold text-slate-800 dark:border-slate-200/10 dark:bg-slate-900/55 dark:text-slate-100">
@@ -97,9 +97,6 @@ const Portfolio = () => {
                   <h2 className="text-3xl font-bold leading-tight text-foreground">
                     {activeProject.title}
                   </h2>
-                  <p className="text-sm leading-relaxed text-secondary">
-                    A compact project spotlight built to stay fully visible while you scroll.
-                  </p>
                 </div>
 
                 <div className="rounded-[1.5rem] border border-slate-900/10 bg-slate-50/85 p-5 dark:border-slate-200/10 dark:bg-slate-900/40">

@@ -59,12 +59,6 @@ const experiences = [
   },
 ];
 
-const principles = [
-  "Systems-first thinking",
-  "Reliable delivery under constraints",
-  "Product-minded frontend and fullstack execution",
-];
-
 const WorkExperience = () => {
   const { activeIndex, progressPercent, sectionRef } = usePinnedStepScroll(
     experiences.length
@@ -81,39 +75,19 @@ const WorkExperience = () => {
       <div className="absolute left-0 top-24 h-72 w-72 rounded-full bg-slate-900/10 blur-3xl dark:bg-blue-200/10" />
       <div className="absolute right-0 top-1/3 h-64 w-64 rounded-full bg-blue-900/10 blur-3xl dark:bg-slate-100/10" />
 
-      <div className="hidden min-h-screen items-center px-6 py-[10vh] lg:flex">
-        <div className="mx-auto grid h-[80vh] w-full max-w-[1240px] grid-cols-[320px_minmax(0,1fr)] gap-7">
-          <aside className="flex h-full flex-col rounded-[2rem] border border-gray-200/80 bg-white/78 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-gray-700/80 dark:bg-black/20">
-            <div className="space-y-5">
+      <div className="hidden min-h-screen items-center px-6 py-[8vh] lg:flex">
+        <div className="mx-auto grid h-[76vh] w-full max-w-[1200px] grid-cols-[300px_minmax(0,1fr)] gap-6">
+          <aside className="flex h-full min-h-0 flex-col rounded-[2rem] border border-gray-200/80 bg-white/78 p-5 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-gray-700/80 dark:bg-black/20">
+            <div className="space-y-4">
               <div className="inline-flex items-center gap-3 rounded-full border border-slate-900/10 bg-slate-100/85 px-4 py-2 text-sm font-semibold text-slate-800 dark:border-slate-200/10 dark:bg-slate-900/55 dark:text-slate-100">
                 <FaBriefcase />
                 Work Experience
               </div>
-
-              <div className="space-y-3">
-                <h2 className="text-[1.7rem] font-bold leading-tight text-foreground">
-                  A short timeline of how I build dependable systems.
-                </h2>
-                <p className="max-w-sm text-sm leading-relaxed text-secondary">
-                  Each stop added a sharper way to think, execute, and deliver.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {principles.map((principle) => (
-                  <span
-                    key={principle}
-                    className="rounded-full border border-slate-900/10 bg-slate-50/90 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-foreground/75 dark:border-slate-200/10 dark:bg-slate-900/35 dark:text-slate-100"
-                  >
-                    {principle}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            <div className="relative mt-7 flex-1 overflow-hidden pt-4">
+            <div className="relative mt-3 min-h-0 flex-1 overflow-y-auto pr-1 pt-2">
               <div className="absolute bottom-4 left-[19px] top-2 w-px bg-gradient-to-b from-slate-300 via-slate-300/80 to-transparent dark:from-slate-700 dark:via-slate-700/80" />
-              <div className="space-y-3.5">
+              <div className="space-y-3">
                 {experiences.map((experience, index) => (
                   <div key={experience.role} className="relative pl-12">
                     <div
@@ -147,7 +121,7 @@ const WorkExperience = () => {
               </div>
             </div>
 
-            <div className="mt-6 rounded-[1.35rem] border border-gray-200/70 bg-white/55 p-4 dark:border-gray-700/70 dark:bg-white/[0.03]">
+            <div className="mt-4 rounded-[1.25rem] border border-gray-200/70 bg-white/55 p-4 dark:border-gray-700/70 dark:bg-white/[0.03]">
               <div className="mb-3 flex items-center justify-between gap-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-foreground/60">
                   Progress
@@ -166,7 +140,7 @@ const WorkExperience = () => {
             </div>
           </aside>
 
-          <div className="relative h-full">
+          <div className="relative h-full min-h-0">
             <AnimatePresence mode="wait">
               <motion.article
                 key={activeExperience.role}
@@ -174,11 +148,11 @@ const WorkExperience = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -28 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="h-full rounded-[2rem] border border-gray-200/80 bg-white/80 p-6 shadow-[0_20px_70px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-gray-700/80 dark:bg-black/20"
+                className="h-full overflow-hidden rounded-[2rem] border border-gray-200/80 bg-white/80 p-4 shadow-[0_20px_70px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-gray-700/80 dark:bg-black/20"
               >
-                <div className="flex h-full flex-col justify-between gap-6">
-                  <div className="grid gap-5 xl:grid-cols-[1.1fr_0.9fr]">
-                    <div className="space-y-4">
+                <div className="flex h-full min-h-0 flex-col gap-4 overflow-y-auto pr-1">
+                  <div className="grid gap-3 xl:grid-cols-[1.1fr_0.9fr]">
+                    <div className="space-y-3">
                       <div className="flex flex-wrap items-center gap-3">
                         <span className="inline-flex rounded-full border border-slate-900/10 bg-slate-100/85 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-800 dark:border-slate-200/10 dark:bg-slate-900/55 dark:text-slate-100">
                           {activeExperience.stage}
@@ -188,46 +162,46 @@ const WorkExperience = () => {
                         </span>
                       </div>
 
-                      <div className="space-y-2.5">
-                        <h3 className="max-w-3xl text-2xl font-bold leading-tight text-foreground xl:text-3xl">
+                      <div className="space-y-2">
+                        <h3 className="max-w-3xl text-[1.5rem] font-bold leading-tight text-foreground xl:text-[1.75rem]">
                           {activeExperience.role}
                         </h3>
-                        <p className="max-w-3xl text-sm leading-relaxed text-secondary md:text-base">
+                        <p className="max-w-3xl text-sm leading-relaxed text-secondary">
                           {activeExperience.summary}
                         </p>
                       </div>
                     </div>
 
-                    <div className="rounded-[1.5rem] border border-blue-900/10 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-5 dark:border-blue-200/10 dark:bg-gradient-to-br dark:from-blue-950/25 dark:via-slate-950/40 dark:to-slate-900/50">
+                    <div className="rounded-[1.35rem] border border-blue-900/10 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-3.5 dark:border-blue-200/10 dark:bg-gradient-to-br dark:from-blue-950/25 dark:via-slate-950/40 dark:to-slate-900/50">
                       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-900 dark:text-blue-200">
                         Snapshot
                       </p>
-                      <p className="mt-3 text-3xl font-bold text-foreground">
+                      <p className="mt-2 text-2xl font-bold text-foreground">
                         0{activeIndex + 1}
                       </p>
                       <p className="mt-2 text-sm leading-relaxed text-secondary">
                         A focused stage in the journey toward reliable frontend and fullstack delivery.
                       </p>
-                      <div className="mt-4 flex items-center gap-3 text-sm text-secondary">
+                      <div className="mt-2 flex items-center gap-3 text-sm text-secondary">
                         <FaArrowDown className="text-blue-900 dark:text-blue-200" />
                         <span>Scroll to move through the timeline</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="grid min-h-0 gap-5 xl:grid-cols-[1.2fr_0.8fr]">
-                    <div className="rounded-[1.5rem] border border-gray-200/80 bg-white/65 p-5 dark:border-gray-700/80 dark:bg-white/5">
-                      <div className="mb-4 flex items-center gap-3 text-foreground">
+                  <div className="grid min-h-0 gap-3 xl:grid-cols-[1.2fr_0.8fr]">
+                    <div className="rounded-[1.35rem] border border-gray-200/80 bg-white/65 p-3.5 dark:border-gray-700/80 dark:bg-white/5">
+                      <div className="mb-3 flex items-center gap-3 text-foreground">
                         <FaCodeBranch className="text-slate-800 dark:text-slate-100" />
                         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground/60">
                           Key Contributions
                         </p>
                       </div>
-                      <div className="grid gap-2.5">
+                      <div className="grid gap-2">
                         {activeExperience.highlights.map((highlight) => (
                           <div
                             key={highlight}
-                            className="rounded-2xl border border-gray-200/70 bg-background/80 px-4 py-2.5 dark:border-gray-700/70"
+                            className="rounded-2xl border border-gray-200/70 bg-background/80 px-3.5 py-2 dark:border-gray-700/70"
                           >
                             <p className="text-sm leading-relaxed text-foreground/80">
                               {highlight}
@@ -237,15 +211,15 @@ const WorkExperience = () => {
                       </div>
                     </div>
 
-                    <div className="rounded-[1.5rem] border border-slate-900/10 bg-slate-50/90 p-5 dark:border-slate-200/10 dark:bg-slate-900/40">
+                    <div className="rounded-[1.35rem] border border-slate-900/10 bg-slate-50/90 p-3.5 dark:border-slate-200/10 dark:bg-slate-900/40">
                       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-800 dark:text-slate-100">
                         Tools and Focus
                       </p>
-                      <div className="mt-4 flex flex-wrap gap-2">
+                      <div className="mt-3 flex flex-wrap gap-2">
                         {activeExperience.tools.map((tool) => (
                           <span
                             key={tool}
-                            className="rounded-full border border-slate-900/10 bg-white/90 px-3.5 py-2 text-sm font-medium text-slate-700 dark:border-slate-200/10 dark:bg-slate-950/60 dark:text-slate-100"
+                            className="rounded-full border border-slate-900/10 bg-white/90 px-3 py-1.5 text-sm font-medium text-slate-700 dark:border-slate-200/10 dark:bg-slate-950/60 dark:text-slate-100"
                           >
                             {tool}
                           </span>
