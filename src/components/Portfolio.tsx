@@ -33,7 +33,10 @@ const projects: Project[] = projectsData.map((project) => ({
 }));
 
 const Portfolio = () => {
-  const mobileStepDistance = 4;
+  const mobileCardRef = useRef<HTMLDivElement | null>(null);
+  const [mobileCardHeight, setMobileCardHeight] = useState(0);
+  const mobileStepDistance =
+    mobileCardHeight > 0 ? Math.max(140, Math.round(mobileCardHeight * 0.32)) : 180;
   const { activeIndex, progressPercent, sectionRef } = usePinnedStepScroll(
     projects.length,
     {
@@ -43,8 +46,6 @@ const Portfolio = () => {
     }
   );
   const activeProject = projects[activeIndex];
-  const mobileCardRef = useRef<HTMLDivElement | null>(null);
-  const [mobileCardHeight, setMobileCardHeight] = useState(0);
 
   useEffect(() => {
     const element = mobileCardRef.current;

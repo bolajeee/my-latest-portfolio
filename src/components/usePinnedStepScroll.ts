@@ -185,7 +185,7 @@ export const usePinnedStepScroll = (
       );
       const nextIndex =
         mobileStepDistance && mobileStepDistance > 0
-          ? clampIndex(Math.round(distanceScrolled / mobileStepDistance), itemCount)
+          ? clampIndex(Math.floor(distanceScrolled / mobileStepDistance), itemCount)
           : clampIndex(
               Math.round((distanceScrolled / trackLength) * (itemCount - 1)),
               itemCount
