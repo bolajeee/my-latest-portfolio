@@ -10,7 +10,12 @@ import {
   FaLayerGroup,
   FaRocket,
 } from "react-icons/fa";
-import { FaArrowDown, FaCodeBranch } from "react-icons/fa6";
+import {
+  FaArrowDown,
+  FaArrowLeft,
+  FaArrowRight,
+  FaCodeBranch,
+} from "react-icons/fa6";
 import projectsData from "../../data/projects.json";
 import { usePinnedStepScroll } from "./usePinnedStepScroll";
 
@@ -43,6 +48,12 @@ const Portfolio = () => {
     }
   );
   const activeProject = projects[activeIndex];
+  const mobileSwipeHint =
+    activeIndex === 0
+      ? "Swipe left to see the next project"
+      : activeIndex === projects.length - 1
+        ? "Swipe right to revisit the previous project"
+        : "Swipe left or right to explore more projects";
 
   useEffect(() => {
     const element = mobileCardRef.current;
@@ -391,10 +402,19 @@ const Portfolio = () => {
                       />
                     </div>
                     <div className="flex items-center justify-between gap-3 text-xs text-secondary">
-                      <span className="inline-flex items-center gap-2">
-                        <FaArrowDown className="text-blue-900 dark:text-blue-200" />
-                        Swipe to explore
-                      </span>
+                      <motion.span
+                        className="inline-flex items-center gap-2"
+                        animate={{ x: [0, 6, 0] }}
+                        transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                       
+                        {mobileSwipeHint}
+                        {activeIndex === projects.length - 1 ? (
+                          <FaArrowLeft className="text-blue-900 dark:text-blue-200" />
+                        ) : (
+                          <FaArrowRight className="text-blue-900 dark:text-blue-200" />
+                        )}
+                      </motion.span>
                       <span>{activeIndex + 1} of {projects.length}</span>
                     </div>
                   </div>
