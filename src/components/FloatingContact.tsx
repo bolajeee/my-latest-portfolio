@@ -130,7 +130,7 @@ const FloatingContact = () => {
                 whileTap={{ scale: 0.9 }}
                 className={`relative w-16 h-16 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center text-white overflow-hidden group ${isOpen
                     ? "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
-                    : "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
+                    : "bg-gradient-to-r from-slate-900 to-blue-900 hover:from-slate-950 hover:to-blue-950 dark:from-blue-700 dark:to-slate-800 dark:hover:from-blue-600 dark:hover:to-slate-700"
                     }`}
             >
                 {/* Animated Background */}
@@ -151,7 +151,7 @@ const FloatingContact = () => {
                 {/* Pulse Animation */}
                 {!isOpen && (
                     <motion.div
-                        className="absolute inset-0 rounded-full bg-orange-500"
+                        className="absolute inset-0 rounded-full bg-blue-900 dark:bg-blue-300"
                         animate={{
                             scale: [1, 1.2, 1],
                             opacity: [0.7, 0, 0.7],

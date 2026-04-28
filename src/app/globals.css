@@ -1,48 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.js";
 
 @import "./embla.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 248, 250, 252;
+  --background-end-rgb: 241, 245, 249;
+  --card-rgb: 255, 255, 255;
+  --border-rgb: 226, 232, 240;
+  --muted-rgb: 241, 245, 249;
+  --muted-foreground-rgb: 100, 116, 139;
 
-  --primary-color: 37, 99, 235;
-  --secondary-color: 234, 179, 8;
-  --accent-color: 239, 68, 68;
-  --orange-color: 249, 115, 22;
+  --primary-color: 15, 23, 42;
+  --primary-foreground-rgb: 255, 255, 255;
+  --secondary-color: 71, 85, 105;
+  --secondary-foreground-rgb: 255, 255, 255;
+  --accent-color: 30, 64, 175;
+  --accent-foreground-rgb: 255, 255, 255;
+  --orange-color: 30, 64, 175;
 
-  --btn-primary-bg: 37, 99, 235;
+  --btn-primary-bg: 30, 64, 175;
   --btn-primary-text: 255, 255, 255;
-  --btn-secondary-bg: 234, 179, 8;
-  --btn-secondary-text: 0, 0, 0;
-  --btn-orange-solid-bg: 249, 115, 22;
+  --btn-secondary-bg: 226, 232, 240;
+  --btn-secondary-text: 15, 23, 42;
+  --btn-orange-solid-bg: 15, 23, 42;
   --btn-orange-solid-text: 255, 255, 255;
   --btn-orange-outline-bg: transparent;
-  --btn-orange-outline-text: 249, 115, 22;
+  --btn-orange-outline-text: 15, 23, 42;
 }
 
 .dark:root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 17, 24, 39;
-    --background-end-rgb: 3, 7, 18;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 2, 6, 23;
+  --background-end-rgb: 15, 23, 42;
+  --card-rgb: 15, 23, 42;
+  --border-rgb: 51, 65, 85;
+  --muted-rgb: 31, 41, 55;
+  --muted-foreground-rgb: 156, 163, 175;
 
-    --primary-color: 59, 130, 246;
-    --secondary-color: 252, 211, 77;
-    --accent-color: 248, 113, 113;
-    --orange-color: 251, 146, 60;
+  --primary-color: 191, 219, 254;
+  --primary-foreground-rgb: 255, 255, 255;
+  --secondary-color: 156, 163, 175;
+  --secondary-foreground-rgb: 17, 24, 39;
+  --accent-color: 96, 165, 250;
+  --accent-foreground-rgb: 255, 255, 255;
+  --orange-color: 96, 165, 250;
 
-    --btn-primary-bg: 59, 130, 246;
-    --btn-primary-text: 255, 255, 255;
-    --btn-secondary-bg: 252, 211, 77;
-    --btn-secondary-text: 0, 0, 0;
-    --btn-orange-solid-bg: 251, 146, 60;
-    --btn-orange-solid-text: 255, 255, 255;
-    --btn-orange-outline-bg: transparent;
-    --btn-orange-outline-text: 251, 146, 60;
-  }
+  --btn-primary-bg: 37, 99, 235;
+  --btn-primary-text: 255, 255, 255;
+  --btn-secondary-bg: 30, 41, 59;
+  --btn-secondary-text: 241, 245, 249;
+  --btn-orange-solid-bg: 148, 163, 184;
+  --btn-orange-solid-text: 255, 255, 255;
+  --btn-orange-outline-bg: transparent;
+  --btn-orange-outline-text: 191, 219, 254;
+}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -52,6 +65,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
@@ -74,23 +88,23 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(249, 115, 22);
+  background: rgb(30, 64, 175);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(234, 88, 12);
+  background: rgb(15, 23, 42);
 }
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid rgb(249, 115, 22);
+  outline: 2px solid rgb(30, 64, 175);
   outline-offset: 2px;
 }
 
 /* Selection styles */
 ::selection {
-  background: rgb(249, 115, 22);
+  background: rgb(30, 64, 175);
   color: white;
 }
 
@@ -105,8 +119,8 @@ html {
 }
 
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(249, 115, 22, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(30, 64, 175, 0.22); }
+  50% { box-shadow: 0 0 30px rgba(30, 64, 175, 0.42); }
 }
 
 .animate-glow {
@@ -149,7 +163,7 @@ html {
 }
 
 .btn-orange-solid:hover {
-  background-color: rgb(234, 88, 12);
+  background-color: rgb(var(--primary-color));
 }
 
 .btn-orange-outline {

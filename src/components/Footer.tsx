@@ -19,8 +19,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-r from-gray-50 to-orange-50/30 dark:from-gray-900 dark:to-orange-950/30 border-t border-orange-500/20">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <footer className="relative border-t border-slate-900/10 bg-gradient-to-r from-slate-50 to-slate-100/70 dark:border-slate-200/10 dark:from-slate-950 dark:to-blue-950/30">
+      <div className="max-w-7xl mx-auto px-6 py-10 lg:py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Copyright */}
           <motion.div
@@ -50,7 +50,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-all duration-300 border border-gray-200 dark:border-gray-700"
+                className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl text-gray-600 dark:text-gray-300 hover:text-blue-900 dark:hover:text-blue-200 transition-all duration-300 border border-gray-200 dark:border-gray-700"
                 aria-label={social.label}
               >
                 <social.icon size={20} />
@@ -69,7 +69,7 @@ const Footer = () => {
               onClick={scrollToTop}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-sm font-medium"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:bg-blue-950 hover:shadow-xl dark:bg-blue-700 dark:hover:bg-blue-600"
             >
               <FaArrowUp size={14} />
               Back to Top
@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="mt-8 pt-6 border-t border-orange-500/20">
+        <div className="mt-8 border-t border-slate-900/10 pt-6 dark:border-slate-200/10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

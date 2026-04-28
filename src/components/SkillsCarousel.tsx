@@ -144,7 +144,7 @@ const SkillsCarousel = ({ activeTab }: SkillsCarouselProps) => {
             className="space-y-8"
           >
             <motion.h3
-              className="text-2xl md:text-3xl font-bold text-orange-500"
+              className="text-2xl font-bold text-blue-900 dark:text-blue-200 md:text-3xl"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
@@ -170,9 +170,9 @@ const SkillsCarousel = ({ activeTab }: SkillsCarouselProps) => {
                     whileTap={{ scale: 0.95 }}
                     className="group relative"
                   >
-                    <div className="h-[120px] w-full flex flex-col justify-center items-center bg-white/5 dark:bg-black/5 p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 backdrop-blur-sm">
+                    <div className="flex h-[120px] w-full flex-col items-center justify-center rounded-xl border border-gray-200 bg-white/5 p-4 shadow-md backdrop-blur-sm transition-all duration-300 hover:border-blue-900/30 hover:shadow-xl dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30">
                       {/* Skill Icon */}
-                      <div className="flex items-center justify-center h-[60px] text-orange-500 group-hover:text-orange-400 transition-colors duration-300">
+                      <div className="flex h-[60px] items-center justify-center text-blue-900 transition-colors duration-300 group-hover:text-blue-700 dark:text-blue-200 dark:group-hover:text-blue-100">
                         {IconComponent && <IconComponent size={40} />}
                       </div>
 
@@ -182,7 +182,7 @@ const SkillsCarousel = ({ activeTab }: SkillsCarouselProps) => {
                       </p>
 
                       {/* Hover Effect Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-blue-900/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-blue-200/10" />
                     </div>
                   </motion.div>
                 );

@@ -114,24 +114,24 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-background text-foreground py-32 relative overflow-hidden" id="contact">
+    <div className="bg-background text-foreground py-24 lg:py-28 relative overflow-hidden" id="contact">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-500/5" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 via-transparent to-blue-900/5 dark:from-slate-100/5 dark:to-blue-200/5" />
+      <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-slate-900/10 blur-3xl dark:bg-blue-200/10" />
+      <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-blue-900/5 blur-3xl dark:bg-slate-200/5" />
 
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             Get In
-            <span className="text-orange-500 px-4 underline decoration-orange-500 decoration-4">
+            <span className="px-4 text-blue-900 underline decoration-blue-900 decoration-4 dark:text-blue-200 dark:decoration-blue-200">
               Touch
             </span>
           </h2>
@@ -140,7 +140,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Contact Info Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -165,9 +165,9 @@ const Contact = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     whileHover={{ x: 10 }}
-                    className="flex items-center gap-4 p-4 bg-white/5 dark:bg-black/5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-all duration-300 group"
+                    className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white/5 p-4 transition-all duration-300 group hover:border-blue-900/30 dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30"
                   >
-                    <div className={`p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-orange-600/20 ${item.color} group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`rounded-lg bg-gradient-to-r from-slate-100 to-blue-50 p-3 ${item.color} transition-transform duration-300 group-hover:scale-110 dark:from-slate-900/55 dark:to-blue-950/35`}>
                       <item.icon size={24} />
                     </div>
                     <div>
@@ -194,7 +194,7 @@ const Contact = () => {
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.2, y: -5 }}
                       whileTap={{ scale: 0.9 }}
-                      className={`p-3 bg-white/5 dark:bg-black/5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-all duration-300 ${social.color}`}
+                      className={`rounded-lg border border-gray-200 bg-white/5 p-3 transition-all duration-300 hover:border-blue-900/30 dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30 ${social.color}`}
                     >
                       <social.icon size={20} />
                     </motion.a>
@@ -227,8 +227,8 @@ const Contact = () => {
                     type="text"
                     name="firstname"
                     className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 ${focusedField === 'firstname'
-                      ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                      ? 'border-blue-900 shadow-lg shadow-blue-900/15 dark:border-blue-300 dark:shadow-blue-300/10'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-blue-900/30 dark:hover:border-blue-300/30'
                       }`}
                     placeholder="First Name"
                     value={formData.firstname}
@@ -248,8 +248,8 @@ const Contact = () => {
                     type="text"
                     name="lastname"
                     className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 ${focusedField === 'lastname'
-                      ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                      : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                      ? 'border-blue-900 shadow-lg shadow-blue-900/15 dark:border-blue-300 dark:shadow-blue-300/10'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-blue-900/30 dark:hover:border-blue-300/30'
                       }`}
                     placeholder="Last Name"
                     value={formData.lastname}
@@ -270,8 +270,8 @@ const Contact = () => {
                   type="email"
                   name="email"
                   className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 ${focusedField === 'email'
-                    ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                    : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                    ? 'border-blue-900 shadow-lg shadow-blue-900/15 dark:border-blue-300 dark:shadow-blue-300/10'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-blue-900/30 dark:hover:border-blue-300/30'
                     }`}
                   placeholder="Email Address"
                   value={formData.email}
@@ -291,8 +291,8 @@ const Contact = () => {
                   type="tel"
                   name="tel"
                   className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 ${focusedField === 'tel'
-                    ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                    : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                    ? 'border-blue-900 shadow-lg shadow-blue-900/15 dark:border-blue-300 dark:shadow-blue-300/10'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-blue-900/30 dark:hover:border-blue-300/30'
                     }`}
                   placeholder="Phone Number"
                   value={formData.tel}
@@ -312,8 +312,8 @@ const Contact = () => {
                   name="message"
                   rows={5}
                   className={`w-full bg-white/5 dark:bg-black/5 border rounded-xl p-4 text-foreground focus:outline-none transition-all duration-300 placeholder-gray-400 resize-none ${focusedField === 'message'
-                    ? 'border-orange-500 shadow-lg shadow-orange-500/20'
-                    : 'border-gray-200 dark:border-gray-700 hover:border-orange-500/50'
+                    ? 'border-blue-900 shadow-lg shadow-blue-900/15 dark:border-blue-300 dark:shadow-blue-300/10'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-blue-900/30 dark:hover:border-blue-300/30'
                     }`}
                   placeholder="Tell me about your project..."
                   value={formData.message}

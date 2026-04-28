@@ -27,81 +27,85 @@ const Hero = () => {
 
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   } satisfies Variants;
 
   const imageVariants = {
     hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut", delay: 0.2 },
+    },
   } satisfies Variants;
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-orange-50/20 dark:to-orange-950/20">
-      {/* Background Elements */}
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-slate-50/40 to-slate-200/35 dark:via-slate-950 dark:to-blue-950/40">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-blue-900/10 blur-3xl animate-pulse dark:bg-blue-300/10" />
+        <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-slate-900/10 blur-3xl animate-pulse delay-1000 dark:bg-slate-200/10" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 pt-32">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          {/* Text Content - Left Side */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 pt-28 lg:py-20 lg:pt-32">
+        <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-16">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="lg:w-1/2 text-center lg:text-left space-y-6"
+            className="space-y-6 text-center lg:w-1/2 lg:text-left"
           >
-            {/* Greeting */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 bg-orange-100 dark:bg-orange-900/30 rounded-full text-orange-600 dark:text-orange-400 text-sm font-medium"
+              className="inline-flex items-center rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-900/40 dark:text-blue-200"
             >
-              👋 Welcome to my portfolio
+              Welcome to my portfolio
             </motion.div>
 
-            {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
               <span className="text-foreground">Hi, I am</span>
               <br />
-              <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-                <span ref={typedElement}></span>
+              <span className="bg-gradient-to-r from-slate-900 via-blue-900 to-blue-700 bg-clip-text text-transparent dark:from-slate-100 dark:via-blue-200 dark:to-blue-400">
+                <span ref={typedElement} />
               </span>
             </h1>
 
-            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl md:text-2xl text-foreground/80 font-medium"
+              className="text-xl font-medium text-foreground/80 md:text-2xl"
             >
               Fullstack Engineer & Food Process Innovator
             </motion.p>
 
-            {/* Description */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="space-y-4 text-foreground/70 leading-relaxed"
+              className="space-y-4 leading-relaxed text-foreground/70"
             >
               <p className="text-lg">
-                5+ years of experience building scalable web and mobile applications with React.js, React Native, and modern JavaScript frameworks.
+                5+ years of experience building scalable web and mobile
+                applications with React.js, React Native, and modern JavaScript
+                frameworks.
               </p>
               <p className="text-lg">
-                Bridging software engineering with food process innovation to create impactful, sustainable solutions.
+                Bridging software engineering with food process innovation to
+                create impactful, sustainable solutions.
               </p>
             </motion.div>
 
-            {/* Call to Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-6"
+              className="flex flex-col justify-center gap-4 pt-6 sm:flex-row lg:justify-start"
             >
               <Link href="#projects">
                 <Button size="lg" className="w-full sm:w-auto">
@@ -115,32 +119,26 @@ const Hero = () => {
               </a>
             </motion.div>
 
-            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0 }}
-              className="flex justify-center lg:justify-start gap-4 pt-4"
+              className="flex justify-center gap-4 pt-4 lg:justify-start"
             >
-              <div className="text-sm text-foreground/60">
-                Connect with me:
-              </div>
+              <div className="text-sm text-foreground/60">Connect with me:</div>
             </motion.div>
           </motion.div>
 
-          {/* Image - Right Side */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={imageVariants}
-            className="lg:w-1/2 flex justify-center lg:justify-end"
+            className="flex justify-center lg:w-1/2 lg:justify-end"
           >
             <div className="relative">
-              {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
-              <div className="absolute -inset-8 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full blur-3xl opacity-10 animate-pulse delay-1000"></div>
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-slate-900 to-blue-800 blur-2xl opacity-20 animate-pulse dark:from-slate-200 dark:to-blue-300" />
+              <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-blue-900 to-slate-700 blur-3xl opacity-10 animate-pulse delay-1000 dark:from-blue-400 dark:to-slate-300" />
 
-              {/* Profile Image */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -149,7 +147,7 @@ const Hero = () => {
                 <Image
                   src={profilepic}
                   alt="Ibrahim O. Ibrahim - Fullstack Engineer"
-                  className="h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px] rounded-full border-4 border-white dark:border-gray-800 object-cover shadow-2xl"
+                  className="h-[300px] w-[300px] rounded-full border-4 border-white object-cover shadow-2xl dark:border-gray-800 md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]"
                   priority
                 />
               </motion.div>

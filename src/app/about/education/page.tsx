@@ -141,7 +141,7 @@ const educationDataJson = {
       "title": "Most Reputable Student Award",
       "description": "Selected among the 60 most reputable students nationwide for exceptional academic performance and character",
       "icon": "FaTrophy",
-      "color": "from-yellow-500 to-orange-500",
+      "color": "from-slate-800 to-blue-800",
       "impact": "National recognition for academic and character excellence"
     },
     {
@@ -149,7 +149,7 @@ const educationDataJson = {
       "title": "Engineering Graduation with Honors",
       "description": "Completed Bachelor of Engineering degree with Second Class Upper Honors ",
       "icon": "FaGraduationCap",
-      "color": "from-blue-500 to-purple-500",
+      "color": "from-blue-800 to-slate-800",
       "impact": "Academic excellence in rigorous engineering program"
     },
     {
@@ -157,7 +157,7 @@ const educationDataJson = {
       "title": "Exceptional Leadership Award",
       "description": "Recognized for outstanding leadership in student community development and peer mentorship",
       "icon": "FaHandshake",
-      "color": "from-orange-500 to-red-500",
+      "color": "from-blue-900 to-slate-700",
       "impact": "Positive influence on student community and leadership development"
     },
     {
@@ -173,7 +173,7 @@ const educationDataJson = {
       "title": "NAFES General Secretary",
       "description": "Led national association of food engineering students, coordinating activities and representing student interests",
       "icon": "FaUsers",
-      "color": "from-blue-500 to-purple-500",
+      "color": "from-blue-700 to-slate-800",
       "impact": "National leadership role affecting thousands of engineering students"
     },
     {
@@ -181,7 +181,7 @@ const educationDataJson = {
       "title": "Tech Summit Co-organizer",
       "description": "Successfully organized NAKSS Tech Summit promoting STEM education and innovation",
       "icon": "FaRocket",
-      "color": "from-purple-500 to-pink-500",
+      "color": "from-slate-800 to-blue-700",
       "impact": "Promoted STEM education and connected students with industry professionals"
     }
   ]
@@ -320,9 +320,9 @@ export default function Education() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-500/5" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 via-transparent to-blue-900/5 dark:from-slate-100/5 dark:to-blue-200/5" />
+      <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-slate-900/10 blur-3xl dark:bg-blue-200/10" />
+      <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-blue-900/5 blur-3xl dark:bg-slate-200/5" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 w-full" ref={ref}>
         {/* Back Button */}
@@ -333,7 +333,7 @@ export default function Education() {
         >
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-foreground/60 hover:text-orange-500 mb-12 text-sm transition-colors group"
+            className="mb-12 inline-flex items-center gap-2 text-sm text-foreground/60 transition-colors group hover:text-blue-900 dark:hover:text-blue-200"
           >
             <FaArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
             Back to Home
@@ -349,7 +349,7 @@ export default function Education() {
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Education &
-            <span className="text-orange-500 px-4 underline decoration-orange-500 decoration-4">
+            <span className="px-4 text-blue-900 underline decoration-blue-900 decoration-4 dark:text-blue-200 dark:decoration-blue-200">
               Achievements
             </span>
           </h1>
@@ -365,19 +365,19 @@ export default function Education() {
             className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
           >
             {/*  <div className="bg-white/5 dark:bg-black/5 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-              <div className="text-2xl md:text-3xl font-bold text-orange-500 mb-1">4.2</div>
+              <div className="mb-1 text-2xl font-bold text-blue-900 dark:text-blue-200 md:text-3xl">4.2</div>
               <div className="text-sm text-secondary">GPA</div>
             </div>  */}
             <div className="bg-white/5 dark:bg-black/5 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-              <div className="text-2xl md:text-3xl font-bold text-orange-500 mb-1">{certifications.length}</div>
+              <div className="mb-1 text-2xl font-bold text-blue-900 dark:text-blue-200 md:text-3xl">{certifications.length}</div>
               <div className="text-sm text-secondary">Certifications</div>
             </div>
             <div className="bg-white/5 dark:bg-black/5 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-              <div className="text-2xl md:text-3xl font-bold text-orange-500 mb-1">{memberships.length}</div>
+              <div className="mb-1 text-2xl font-bold text-blue-900 dark:text-blue-200 md:text-3xl">{memberships.length}</div>
               <div className="text-sm text-secondary">Memberships</div>
             </div>
             <div className="bg-white/5 dark:bg-black/5 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-              <div className="text-2xl md:text-3xl font-bold text-orange-500 mb-1">{achievements.length}</div>
+              <div className="mb-1 text-2xl font-bold text-blue-900 dark:text-blue-200 md:text-3xl">{achievements.length}</div>
               <div className="text-sm text-secondary">Awards</div>
             </div>
           </motion.div>
@@ -400,8 +400,8 @@ export default function Education() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === tab.id
-                ? "bg-orange-500 text-white shadow-lg"
-                : "bg-white/5 dark:bg-black/5 text-foreground hover:bg-orange-500/20 border border-gray-200 dark:border-gray-700"
+                ? "bg-slate-900 text-white shadow-lg dark:bg-blue-700"
+                : "border border-gray-200 bg-white/5 text-foreground hover:bg-slate-100 dark:border-gray-700 dark:bg-black/5 dark:hover:bg-slate-900/45"
                 }`}
             >
               <tab.icon size={16} />
@@ -426,36 +426,36 @@ export default function Education() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white/5 dark:bg-black/5 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="rounded-2xl border border-gray-200 bg-white/5 p-8 shadow-lg transition-all duration-300 hover:border-blue-900/30 hover:shadow-xl dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30"
               >
                 <div className="flex flex-col lg:flex-row gap-8">
                   {/* University Info */}
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-3 bg-orange-500/20 rounded-full">
-                        <FaUniversity className="text-orange-500 text-xl" />
+                      <div className="rounded-full bg-slate-100 p-3 dark:bg-slate-900/45">
+                        <FaUniversity className="text-xl text-blue-900 dark:text-blue-200" />
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground">{education.degree}</h3>
-                        <p className="text-orange-500 font-medium">{education.university}</p>
+                        <p className="font-medium text-blue-900 dark:text-blue-200">{education.university}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                       <div className="flex items-center gap-2">
-                        <FaMapMarkerAlt className="text-orange-500" />
+                        <FaMapMarkerAlt className="text-blue-900 dark:text-blue-200" />
                         <span className="text-secondary">{education.location}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <FaCalendarAlt className="text-orange-500" />
+                        <FaCalendarAlt className="text-blue-900 dark:text-blue-200" />
                         <span className="text-secondary">{education.duration}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <FaMedal className="text-orange-500" />
+                        <FaMedal className="text-blue-900 dark:text-blue-200" />
                         <span className="text-secondary">{education.grade}</span>
                       </div>
                       {/* <div className="flex items-center gap-2">
-                        <FaStar className="text-orange-500" />
+                        <FaStar className="text-blue-900 dark:text-blue-200" />
                         <span className="text-secondary">GPA: {education.gpa}</span>
                       </div> */}
                     </div>
@@ -467,7 +467,7 @@ export default function Education() {
                     {/* Education Progress */}
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <FaRocket className="text-orange-500" />
+                        <FaRocket className="text-blue-900 dark:text-blue-200" />
                         Academic Journey
                       </h4>
                       <div className="space-y-3">
@@ -484,9 +484,9 @@ export default function Education() {
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             className="flex items-center gap-3"
                           >
-                            <div className="w-3 h-3 bg-orange-500 rounded-full flex-shrink-0" />
+                            <div className="h-3 w-3 flex-shrink-0 rounded-full bg-blue-900 dark:bg-blue-200" />
                             <div className="flex-1">
-                              <span className="text-orange-500 font-medium text-sm">{milestone.year}</span>
+                              <span className="text-sm font-medium text-blue-900 dark:text-blue-200">{milestone.year}</span>
                               <span className="text-secondary text-sm ml-2">{milestone.event}</span>
                             </div>
                             <FaCheckCircle className="text-green-500 text-sm" />
@@ -498,7 +498,7 @@ export default function Education() {
                     {/* Key Subjects */}
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <FaBook className="text-orange-500" />
+                        <FaBook className="text-blue-900 dark:text-blue-200" />
                         Key Subjects
                       </h4>
                       <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -508,7 +508,7 @@ export default function Education() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.3, delay: index * 0.05 }}
-                            className="px-3 py-2 bg-orange-500/10 text-orange-500 text-sm rounded-full border border-orange-500/30 text-center hover:bg-orange-500/20 transition-colors"
+                            className="rounded-full border border-slate-900/10 bg-slate-100 px-3 py-2 text-center text-sm text-slate-800 transition-colors hover:bg-slate-200 dark:border-slate-200/10 dark:bg-slate-900/45 dark:text-slate-100 dark:hover:bg-slate-900/60"
                           >
                             {subject}
                           </motion.span>
@@ -520,7 +520,7 @@ export default function Education() {
                     {education.projects && education.projects.length > 0 && (
                       <div>
                         <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-                          <FaFlask className="text-orange-500" />
+                          <FaFlask className="text-blue-900 dark:text-blue-200" />
                           Academic Projects
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -530,12 +530,12 @@ export default function Education() {
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.4, delay: index * 0.1 }}
-                              className="p-4 bg-white/5 dark:bg-black/5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-all duration-300 group"
+                              className="rounded-lg border border-gray-200 bg-white/5 p-4 transition-all duration-300 group hover:border-blue-900/30 dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30"
                             >
                               <div className="flex items-center gap-2 mb-2">
-                                <FaCog className="text-orange-500 group-hover:rotate-180 transition-transform duration-300" />
-                                <h5 className="font-semibold text-foreground group-hover:text-orange-500 transition-colors">{project.title}</h5>
-                                <span className="text-xs text-orange-500 ml-auto">{project.year}</span>
+                                <FaCog className="text-blue-900 transition-transform duration-300 group-hover:rotate-180 dark:text-blue-200" />
+                                <h5 className="font-semibold text-foreground transition-colors group-hover:text-blue-900 dark:group-hover:text-blue-200">{project.title}</h5>
+                                <span className="ml-auto text-xs text-blue-900 dark:text-blue-200">{project.year}</span>
                               </div>
                               <p className="text-secondary text-sm mb-3">{project.description}</p>
 
@@ -544,7 +544,7 @@ export default function Education() {
                                 {project.technologies.map((tech: string, techIndex: number) => (
                                   <span
                                     key={techIndex}
-                                    className="px-2 py-1 bg-orange-500/10 text-orange-500 text-xs rounded-full"
+                                    className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-700 dark:bg-slate-900/45 dark:text-slate-100"
                                   >
                                     {tech}
                                   </span>
@@ -555,14 +555,14 @@ export default function Education() {
                               {project.publicationLink && (
                                 <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
                                   <div className="flex items-center gap-2 mb-2">
-                                    <FaBook className="text-orange-500 text-xs" />
+                                    <FaBook className="text-xs text-blue-900 dark:text-blue-200" />
                                     <span className="text-xs font-medium text-foreground">Publication:</span>
                                   </div>
                                   <a
                                     href={project.publicationLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-3 py-2 bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 text-xs rounded-lg transition-all duration-300 group"
+                                    className="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-3 py-2 text-xs text-blue-900 transition-all duration-300 group hover:bg-slate-200 dark:bg-slate-900/45 dark:text-blue-200 dark:hover:bg-slate-900/60"
                                   >
                                     <span className="line-clamp-1">{project.publicationTitle || "View Publication"}</span>
                                     <FaExternalLinkAlt className="group-hover:rotate-12 transition-transform" />
@@ -579,7 +579,7 @@ export default function Education() {
                   {/* Academic Achievements */}
                   <div className="lg:w-80">
                     <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <FaStar className="text-orange-500" />
+                      <FaStar className="text-blue-900 dark:text-blue-200" />
                       Academic Highlights
                     </h4>
                     <div className="space-y-3">
@@ -589,9 +589,9 @@ export default function Education() {
                           initial={{ opacity: 0, x: 20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.4, delay: index * 0.1 }}
-                          className="flex items-start gap-3 p-3 bg-white/5 dark:bg-black/5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-orange-500/30 transition-all duration-300 group"
+                          className="flex items-start gap-3 rounded-lg border border-gray-200 bg-white/5 p-3 transition-all duration-300 group hover:border-blue-900/30 dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30"
                         >
-                          <FaCheckCircle className="text-orange-500 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                          <FaCheckCircle className="mt-1 flex-shrink-0 text-blue-900 transition-transform group-hover:scale-110 dark:text-blue-200" />
                           <span className="text-secondary text-sm">{achievement}</span>
                         </motion.div>
                       ))}
@@ -618,21 +618,21 @@ export default function Education() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white/5 dark:bg-black/5 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer group"
+                  className="cursor-pointer rounded-2xl border border-gray-200 bg-white/5 p-6 shadow-lg transition-all duration-300 group hover:border-blue-900/30 hover:shadow-xl dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30"
                   onClick={() => openModal(cert.images, 0)}
 
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-orange-500/20 rounded-full group-hover:bg-orange-500/30 transition-colors">
-                      <FaCertificate className="text-orange-500 text-xl" />
+                    <div className="rounded-full bg-slate-100 p-3 transition-colors group-hover:bg-slate-200 dark:bg-slate-900/45 dark:group-hover:bg-slate-900/60">
+                      <FaCertificate className="text-xl text-blue-900 dark:text-blue-200" />
                     </div>
                     <div className="flex-1">
-                      <span className="text-xs text-orange-500 font-medium">{cert.category}</span>
+                      <span className="text-xs font-medium text-blue-900 dark:text-blue-200">{cert.category}</span>
                       <p className="text-xs text-secondary">{cert.year}</p>
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-orange-500 transition-colors">
+                  <h3 className="mb-3 text-lg font-semibold text-foreground transition-colors group-hover:text-blue-900 dark:group-hover:text-blue-200">
                     {cert.title}
                   </h3>
 
@@ -647,7 +647,7 @@ export default function Education() {
                         {cert.skills.map((skill: string, skillIndex: number) => (
                           <span
                             key={skillIndex}
-                            className="px-2 py-1 bg-orange-500/10 text-orange-500 text-xs rounded-full"
+                            className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-700 dark:bg-slate-900/45 dark:text-slate-100"
                           >
                             {skill}
                           </span>
@@ -662,7 +662,7 @@ export default function Education() {
                       {cert.images.map((_: string, imgIndex: number) => (
                         <div
                           key={imgIndex}
-                          className="w-2 h-2 bg-orange-500/30 rounded-full group-hover:bg-orange-500 transition-colors"
+                          className="h-2 w-2 rounded-full bg-blue-900/30 transition-colors group-hover:bg-blue-900 dark:bg-blue-200/30 dark:group-hover:bg-blue-200"
                         />
                       ))}
                     </div>
@@ -679,12 +679,12 @@ export default function Education() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-orange-500 text-white p-2 rounded-full">
+                      <div className="rounded-full bg-slate-900 p-2 text-white dark:bg-blue-700">
                         <FaEye className="text-sm" />
                       </div>
                     </div>
                     <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="bg-orange-500 text-white text-xs px-2 py-1 rounded-full">
+                      <span className="rounded-full bg-slate-900 px-2 py-1 text-xs text-white dark:bg-blue-700">
                         {cert.images.length} image{cert.images.length > 1 ? 's' : ''}
                       </span>
                     </div>
@@ -712,17 +712,17 @@ export default function Education() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white/5 dark:bg-black/5 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                    className="rounded-2xl border border-gray-200 bg-white/5 p-6 shadow-lg transition-all duration-300 group hover:border-blue-900/30 hover:shadow-xl dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="p-3 bg-orange-500/20 rounded-full group-hover:bg-orange-500/30 transition-colors">
-                        <IconComponent className="text-orange-500 text-xl" />
+                      <div className="rounded-full bg-slate-100 p-3 transition-colors group-hover:bg-slate-200 dark:bg-slate-900/45 dark:group-hover:bg-slate-900/60">
+                        <IconComponent className="text-xl text-blue-900 dark:text-blue-200" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-foreground group-hover:text-orange-500 transition-colors mb-2">
+                        <h3 className="mb-2 text-lg font-semibold text-foreground transition-colors group-hover:text-blue-900 dark:group-hover:text-blue-200">
                           {membership.title}
                         </h3>
-                        <p className="text-orange-500 text-sm font-medium mb-2">{membership.role}</p>
+                        <p className="mb-2 text-sm font-medium text-blue-900 dark:text-blue-200">{membership.role}</p>
                         <p className="text-secondary text-sm mb-3">{membership.description}</p>
 
                         {/* Additional Info */}
@@ -732,7 +732,7 @@ export default function Education() {
                               {(membership.benefits || membership.responsibilities || membership.impact || membership.recognition || []).map((item: string, itemIndex: number) => (
                                 <span
                                   key={itemIndex}
-                                  className="px-2 py-1 bg-orange-500/10 text-orange-500 text-xs rounded-full"
+                                  className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-700 dark:bg-slate-900/45 dark:text-slate-100"
                                 >
                                   {item}
                                 </span>
@@ -742,7 +742,7 @@ export default function Education() {
                         )}
 
                         <div className="flex items-center gap-2">
-                          <FaCalendarAlt className="text-orange-500 text-xs" />
+                          <FaCalendarAlt className="text-xs text-blue-900 dark:text-blue-200" />
                           <span className="text-xs text-secondary">{membership.year}</span>
                         </div>
                       </div>
@@ -764,7 +764,7 @@ export default function Education() {
             >
               {/* Achievement Timeline */}
               <div className="relative">
-                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 to-orange-300"></div>
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-slate-900 to-blue-700 dark:from-slate-100 dark:to-blue-300"></div>
                 <div className="space-y-8">
                   {achievements.map((achievement: Achievement, index: number) => {
                     const IconComponent = iconMap[achievement.icon] || FaTrophy;
@@ -779,15 +779,15 @@ export default function Education() {
                         <div className={`relative z-10 p-3 bg-gradient-to-r ${achievement.color} rounded-full shadow-lg group-hover:scale-110 transition-transform`}>
                           <IconComponent className="text-white text-xl" />
                         </div>
-                        <div className="flex-1 bg-white/5 dark:bg-black/5 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-all duration-300 group">
+                        <div className="flex-1 rounded-2xl border border-gray-200 bg-white/5 p-6 transition-all duration-300 group hover:border-blue-900/30 dark:border-gray-700 dark:bg-black/5 dark:hover:border-blue-300/30">
                           <div className="flex items-center gap-3 mb-2">
-                            <span className="text-orange-500 font-bold text-sm">{achievement.year}</span>
-                            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <span className="text-sm font-bold text-blue-900 dark:text-blue-200">{achievement.year}</span>
+                            <div className="h-2 w-2 rounded-full bg-blue-900 dark:bg-blue-200"></div>
                           </div>
-                          <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-orange-500 transition-colors">{achievement.title}</h3>
+                          <h3 className="mb-2 text-xl font-semibold text-foreground transition-colors group-hover:text-blue-900 dark:group-hover:text-blue-200">{achievement.title}</h3>
                           <p className="text-secondary mb-3">{achievement.description}</p>
                           <div className="flex items-center gap-2 text-sm">
-                            <FaLightbulb className="text-orange-500" />
+                            <FaLightbulb className="text-blue-900 dark:text-blue-200" />
                             <span className="text-secondary font-medium">Impact:</span>
                             <span className="text-secondary">{achievement.impact}</span>
                           </div>
@@ -858,7 +858,7 @@ export default function Education() {
           animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0 }}
           transition={{ duration: 0.3 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 right-8 p-3 bg-orange-500 text-white rounded-full shadow-lg hover:bg-orange-600 transition-colors z-40"
+          className="fixed bottom-8 right-8 z-40 rounded-full bg-slate-900 p-3 text-white shadow-lg transition-colors hover:bg-blue-950 dark:bg-blue-700 dark:hover:bg-blue-600"
           title="Scroll to top"
         >
           <FaArrowLeft className="rotate-90" size={16} />

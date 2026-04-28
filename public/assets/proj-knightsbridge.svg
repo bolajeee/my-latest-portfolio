@@ -1,0 +1,34 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="40" fill="#F2EEE7"/>
+  <rect x="56" y="56" width="1088" height="788" rx="32" fill="url(#paint0_linear)"/>
+  <rect x="96" y="110" width="1008" height="100" rx="24" fill="#FFF9F1" fill-opacity="0.84"/>
+  <rect x="128" y="144" width="188" height="20" rx="10" fill="#2D2217"/>
+  <rect x="756" y="144" width="116" height="20" rx="10" fill="#7D5B3C"/>
+  <rect x="894" y="144" width="84" height="20" rx="10" fill="#7D5B3C"/>
+  <rect x="1000" y="144" width="64" height="20" rx="10" fill="#7D5B3C"/>
+  <rect x="96" y="244" width="472" height="520" rx="30" fill="#FFF8EE" fill-opacity="0.78"/>
+  <rect x="628" y="244" width="380" height="212" rx="28" fill="#FFF8EE" fill-opacity="0.78"/>
+  <rect x="628" y="488" width="176" height="176" rx="24" fill="#FFF8EE" fill-opacity="0.72"/>
+  <rect x="832" y="488" width="176" height="176" rx="24" fill="#FFF8EE" fill-opacity="0.72"/>
+  <rect x="144" y="306" width="312" height="18" rx="9" fill="#2D2217"/>
+  <rect x="144" y="348" width="268" height="18" rx="9" fill="#6E5944"/>
+  <rect x="144" y="416" width="360" height="184" rx="24" fill="#B8875B" fill-opacity="0.22" stroke="#A9774D" stroke-opacity="0.4" stroke-width="2"/>
+  <rect x="668" y="290" width="300" height="16" rx="8" fill="#2D2217"/>
+  <rect x="668" y="328" width="252" height="16" rx="8" fill="#6E5944"/>
+  <rect x="668" y="366" width="280" height="16" rx="8" fill="#6E5944"/>
+  <circle cx="176" cy="718" r="10" fill="#8B603A"/>
+  <circle cx="205" cy="718" r="10" fill="#D7B38A"/>
+  <circle cx="234" cy="718" r="10" fill="#2D2217"/>
+  <text x="96" y="808" fill="#251B12" font-family="Arial, sans-serif" font-size="64" font-weight="700">
+    Knightsbridge Gas Energy
+  </text>
+  <text x="96" y="856" fill="#5E4A36" font-family="Arial, sans-serif" font-size="28">
+    WordPress redesign for a Nigerian energy company serving industrial and residential clients
+  </text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="72" y1="72" x2="1090" y2="828" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8D7C3"/>
+      <stop offset="1" stop-color="#C89A6D"/>
+    </linearGradient>
+  </defs>
+</svg>

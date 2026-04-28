@@ -1,6 +1,28 @@
 [
   {
     "id": "1",
+    "title": "Builders Liability AMMC",
+    "description": "A digital claims and insurance operations platform built for the Abuja Metropolitan Management Council builders liability initiative. The platform streamlines policy administration, property survey workflows, and claims handling at scale for a public-facing program serving thousands of Nigerians.",
+    "techStack": ["Next.js", "Claims Management", "Policy Administration", "Property Surveys", "Insurance Workflows"],
+    "keyFeatures": ["Digital claims intake and processing", "Property survey workflow support", "Policy administration for FCT builders", "Public-sector scale operations dashboard", "Structured insurance records management"],
+    "image": "/assets/proj-builders.svg",
+    "liveLink": "https://fctbuilders.gladfaith.com/",
+    "width": 1200,
+    "height": 900
+  },
+  {
+    "id": "2",
+    "title": "Knightsbridge Gas Energy",
+    "description": "A corporate website redesign for an oil and gas firm focused on presenting reliable energy solutions for Nigerian industries and homes. I was brought in to refresh the experience, improve clarity, and give the brand a cleaner, more credible digital presence on WordPress.",
+    "techStack": ["WordPress", "GeneratePress", "Custom Redesign", "Responsive UX", "Corporate Web Content"],
+    "keyFeatures": ["Redesigned corporate website experience", "Clearer service and company messaging", "Responsive layout improvements", "Stronger brand presentation for an energy firm", "Content structure optimized for trust and discoverability"],
+    "image": "/assets/proj-knightsbridge.svg",
+    "liveLink": "https://knightsbridgeng.com/",
+    "width": 1200,
+    "height": 900
+  },
+  {
+    "id": "3",
     "title": "Temperature's Couture",
     "description": "A sleek, full-featured e-commerce platform built with Next.js, TypeScript, and Prisma. Smile Fashion Brand delivers a modern shopping experience with dark mode, real-time cart updates, and a responsive, mobile-first UI. Featuring secure authentication via NextAuth.js, advanced product filtering, and an intuitive admin dashboard for product and order management, it embodies both technical precision and design elegance.",
     "techStack": ["Next.js 13+", "TypeScript", "Node", "MongoDb with Mongoose", "JWT Authentication"],
@@ -12,7 +34,7 @@
     "height": 600
   },
   {
-    "id": "2",
+    "id": "4",
     "title": "Admin Management System",
     "description": "A modern, responsive admin dashboard built with React, Vite, and TailwindCSS. This system offers a unified interface for administrators and users to manage tasks, memos, messages, and performance metrics. It features secure authentication, real-time communication, dynamic task tracking, and full customization options for an efficient workflow.",
     "techStack": ["React", "Vite", "TailwindCSS", "Zustand", "React Router", "Axios"],
@@ -24,7 +46,7 @@
     "height": 600
   },
   {
-    "id": "3",
+    "id": "5",
     "title": "Ai Summarizer",
     "description": "An intelligent web application that transforms lengthy articles into concise, meaningful summaries. Built with React, Redux Toolkit, and Vite, this AI-powered summarizer uses advanced natural language processing to deliver quick, coherent summaries that help users grasp key ideas instantly. Designed with performance and accessibility in mind, it features a sleek interface, customizable summary length, and a responsive layout for seamless use across devices.",
     "techStack": ["React", "Vite", "Tailwind CSS", "Redux Toolkit", "RTK Query"],
@@ -36,7 +58,7 @@
     "height": 600
   },
   {
-    "id": "4",
+    "id": "6",
     "title": "Fitness Tracker Api",
     "description": "A RESTful backend built with Django REST Framework for managing user fitness activities. The Fitness Tracker API enables users to log, update, and track their workout activities while providing authentication and secure data management through JWT authorization. It includes activity history filtering, performance metrics, and full CRUD operations for both users and activities.",
     "techStack": ["Django", "Django REST Framework", "JWT Authentication", "SQLite/PostgreSQL"],

@@ -72,7 +72,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="text-lg font-bold text-gray-900 dark:text-white hover:text-orange-500 transition-colors">
+          <Link href="/" className="text-lg font-bold text-gray-900 transition-colors hover:text-blue-900 dark:text-white dark:hover:text-blue-200">
             Portfolio
           </Link>
 
@@ -82,7 +82,7 @@ const Navbar = () => {
               <button
                 key={index}
                 onClick={() => handleNavigation(link.path)}
-                className="text-sm text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors font-medium"
+                className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-900 dark:text-gray-300 dark:hover:text-blue-200"
               >
                 {link.title}
               </button>
@@ -90,7 +90,7 @@ const Navbar = () => {
             {mounted && (
               <button
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                className="p-2 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-blue-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-blue-200"
               >
                 {theme === "light" ? <BsMoonFill size={16} /> : <BsSunFill size={16} />}
               </button>
@@ -102,14 +102,14 @@ const Navbar = () => {
             {mounted && (
               <button
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                className="p-2 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-blue-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-blue-200"
               >
                 {theme === "light" ? <BsMoonFill size={16} /> : <BsSunFill size={16} />}
               </button>
             )}
             <button
               onClick={toggleNav}
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-blue-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-blue-200"
             >
               {nav ? <AiOutlineClose size={18} /> : <AiOutlineMenu size={18} />}
             </button>
@@ -127,7 +127,7 @@ const Navbar = () => {
                 <button
                   key={index}
                   onClick={() => handleNavigation(link.path)}
-                  className="block w-full text-left px-4 py-3 text-sm text-gray-600 dark:text-gray-300 hover:text-orange-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors font-medium"
+                  className="block w-full px-4 py-3 text-left text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-blue-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-blue-200"
                 >
                   {link.title}
                 </button>

@@ -107,16 +107,16 @@ const CertificationsCarousel = () => {
                 rel="noopener noreferrer"
                 className="block h-full"
               >
-                <div className="bg-foreground/5 hover:bg-foreground/10 border border-foreground/10 hover:border-orange-500/30 rounded-lg p-6 h-full transition-all duration-300 group">
+                <div className="h-full rounded-lg border border-foreground/10 bg-foreground/5 p-6 transition-all duration-300 group hover:border-blue-900/30 hover:bg-foreground/10 dark:hover:border-blue-300/30">
                   <div className="flex items-start justify-between mb-3">
-                    <span className="text-xs font-medium text-orange-500 bg-orange-500/10 px-2 py-1 rounded">
+                    <span className="rounded bg-slate-100 px-2 py-1 text-xs font-medium text-blue-900 dark:bg-slate-900/45 dark:text-blue-200">
                       {cert.provider}
                     </span>
-                    <svg className="w-4 h-4 text-foreground/40 group-hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-4 w-4 text-foreground/40 transition-colors group-hover:text-blue-900 dark:group-hover:text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </div>
-                  <h3 className="font-medium text-foreground group-hover:text-orange-500 transition-colors mb-2 break-words">
+                  <h3 className="mb-2 break-words font-medium text-foreground transition-colors group-hover:text-blue-900 dark:group-hover:text-blue-200">
                     {cert.name}
                   </h3>
                   <p className="text-sm text-foreground/70 leading-relaxed break-words">
@@ -136,7 +136,7 @@ const CertificationsCarousel = () => {
             key={index}
             onClick={() => scrollTo(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${index === selectedIndex
-              ? 'bg-orange-500 w-6'
+              ? 'bg-slate-900 w-6 dark:bg-blue-300'
               : 'bg-foreground/20 hover:bg-foreground/40'
               }`}
           />
@@ -149,11 +149,11 @@ const CertificationsCarousel = () => {
 const Certifications = () => {
   return (
     <div
-      className="mx-auto px-4 py-16 bg-background text-foreground overflow-x-hidden"
+      className="mx-auto px-6 py-24 lg:py-28 bg-background text-foreground overflow-x-hidden"
       id="certifications"
     >
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="mb-12 text-center">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="mb-10 lg:mb-12 text-center">
           <h1 className="text-3xl font-light mb-4 text-foreground">
             Certifications
           </h1>

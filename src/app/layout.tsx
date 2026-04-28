@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./embla.css";
 import { ThemeProviders } from "@/components/ThemeProviders";
@@ -24,7 +24,11 @@ export const metadata: Metadata = {
   description: "Portfolio of Ibrahim O. Ibrahim - Fullstack Engineer with 5+ years of experience in React.js, React Native, Node.js, and modern web technologies. Specializing in scalable applications and food process innovation.",
   keywords: "fullstack engineer, react developer, nodejs, food process innovation, web development, mobile development",
   authors: [{ name: "Ibrahim O. Ibrahim" }],
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
